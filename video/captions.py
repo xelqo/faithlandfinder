@@ -1,6 +1,14 @@
 # From the edited talking head's word timings -> assets/captions.json (2-3 word chunks) + timing.json (scene starts).
 import json, re
 W = json.load(open("raw/cam_words.json"))
+# Whisper splits names differently between runs: join "Faith" + "Finder" into one token
+J = []
+for w in W:
+    if J and J[-1]["w"] == "Faith" and w["w"].strip(",.") == "Finder":
+        J[-1] = {"w": "FaithFinder" + w["w"][len("Finder"):], "s": J[-1]["s"], "e": w["e"]}
+    else:
+        J.append(dict(w))
+W = [w for i, w in enumerate(J) if not (i and w["w"].strip(",.").lower() == J[i - 1]["w"].strip(",.").lower())]  # drop doubled words at cut points
 # join split tokens, fix Whisper's mishearings (what was meant on screen)
 FIX = {"medium": "median", "$1": "$1.47", ".47": None, "non": "nonprofit", "-profit": None, "FaithFinder": "Faith Land Finder",
        "Interior": "Enter a", "record,": "records,", "test.": "tests.", "100": "100%", "%": None, "home,": "home", "I": "might"}
@@ -27,7 +35,9 @@ for c in caps:  # fold one-word leftovers ("million.", "map.") into the chunk be
     else:
         merged.append(c)
 caps = merged
-for c in caps: c["text"] = c["text"].replace("Church's", "church's")
+for i, c in enumerate(caps):
+    c["text"] = c["text"].replace("Church's", "church's").replace("in public records", "and public records")
+    if i and re.search(r"[.!?]$", caps[i - 1]["text"]): c["text"] = c["text"][0].upper() + c["text"][1:]
 for a, b in zip(caps, caps[1:]):  # no flicker between chunks
     if b["t0"] - a["t1"] < 0.5: a["t1"] = b["t0"]
 json.dump(caps, open("assets/captions.json", "w"), indent=0)
@@ -41,7 +51,8 @@ def start_of(word, nth=1, after=0):
     raise SystemExit(f"not found: {word}")
 s2 = start_of("Look"); s3 = start_of("Faith Land Finder"); eleven = start_of("11"); s4 = max(w["s"] for w in words if w["w"] == "In" and w["s"] < eleven)
 end = words[-1]["e"] + 3.0
-tag = max(w["s"] for w in words if w["w"] == "And")
+nx = [i for i, w in enumerate(words) if w["w"].lower() == "next"][-1]
+tag = words[nx - 1]["s"] if words[nx - 1]["w"].lower() in ("the", "and") else words[nx]["s"]
 timing = {"tag": round(tag - 0.1, 2), "s2": round(s2 - 0.15, 2), "s3": round(s3 - 0.15, 2), "s4": round(s4 - 0.15, 2), "end": round(end, 2), "voice_end": round(words[-1]["e"], 2)}
 json.dump(timing, open("timing.json", "w"))
 print(timing); print(len(caps), "captions"); print(" | ".join(c["text"] for c in caps))
