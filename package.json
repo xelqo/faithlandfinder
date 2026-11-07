@@ -1,0 +1,12 @@
+{
+  "name": "fire-ready",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "js-yaml": "^4.1.0"
+  }
+}

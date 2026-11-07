@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FFF8F2" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Fire-Ready</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <!-- HOME: score + the walk-around path -->
+    <section id="home" class="screen active">
+      <header class="top">
+        <div class="brand"><span class="flame">🔥</span> Fire-Ready</div>
+        <button class="chip ghost" id="resetBtn">Start over</button>
+      </header>
+
+      <div class="score-card">
+        <div class="ring" id="ring">
+          <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="fill" id="ringFill" cx="60" cy="60" r="52"/></svg>
+          <div class="ring-label"><b id="scoreNum">0</b><span>of 15 cleared</span></div>
+        </div>
+        <div class="stats">
+          <div><b id="statPhotos">0</b><span>photos</span></div>
+          <div><b id="statFixes" class="red">0</b><span>fixes found</span></div>
+          <div><b id="statLeft">15</b><span>to check</span></div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Walk around your home</h2>
+      <p class="muted">Tap a stop, snap a photo. Claude checks it against the state's wildfire discount list.</p>
+      <ol class="path" id="path"></ol>
+    </section>
+
+    <!-- RESULT of one photo -->
+    <section id="result" class="screen">
+      <header class="top">
+        <button class="chip ghost" data-go="home">← Back</button>
+        <div class="brand small" id="resultStop"></div>
+        <span></span>
+      </header>
+      <div class="photo-wrap"><img id="resultImg" alt="Your photo" /><div class="scanline" id="scanline"></div></div>
+      <p class="summary" id="resultSummary">Checking your photo…</p>
+      <div id="resultCards"></div>
+      <div class="sticky-cta">
+        <button class="btn" id="nextBtn">Continue</button>
+      </div>
+    </section>
+
+    <!-- FIXES: the to-do list -->
+    <section id="fixes" class="screen">
+      <header class="top"><div class="brand">Your fixes</div><span></span></header>
+      <p class="muted">Every item here is on the Department of Insurance discount list. Fix it, then re-snap to prove it.</p>
+      <div id="fixList"></div>
+    </section>
+
+    <!-- REPORT for the insurer -->
+    <section id="report" class="screen">
+      <header class="top"><div class="brand">For your insurer</div><button class="chip" id="copyBtn">Copy</button></header>
+      <div id="reportBody"></div>
+    </section>
+  </main>
+
+  <nav class="tabs">
+    <button data-go="home" class="on"><span>🏠</span>Home</button>
+    <button id="snapTab"><span class="cam">📷</span>Snap</button>
+    <button data-go="fixes"><span>🛠️</span>Fixes<i class="badge" id="fixBadge" hidden></i></button>
+    <button data-go="report"><span>📄</span>Report</button>
+  </nav>
+
+  <input type="file" id="camera" accept="image/*" capture="environment" hidden />
+  <div class="toast" id="toast"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

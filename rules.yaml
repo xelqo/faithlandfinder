@@ -1,0 +1,225 @@
+# Fire-Ready rules — what Claude looks for in each photo.
+# Claude only DESCRIBES what it sees per check; the app decides PASS / FAIL / UNSURE from these rules.
+# Verified 2026-11-06 against the sources in SOURCES.md.  [D] = on the Dept. of Insurance "Safer from Wildfires"
+# discount list (every listed action qualifies for a discount; size varies by insurer).  [L] = state defensible-space
+# law (PRC 4291; applies in designated fire-hazard areas).  [G] = CAL FIRE guidance.  [P] = proposed (not yet in force).
+# cost = OUR rough DIY estimate for the demo, not sourced. Check prices before quoting them on stage.
+
+checks:
+
+  # ---------- EASY: reliable from one ordinary photo ----------
+  - id: mulch_zone0
+    name: Wood mulch near the house
+    visibility: easy
+    basis: [D, P]
+    discount_item: "5-foot ember-resistant zone around the structure"
+    look_for: Ground within ~5 ft of the wall. Bark, wood chips, rubber mulch, dry leaves or pine needles on it.
+    fail_if: Bark / wood-chip / rubber mulch or a layer of dry leaves/needles within 5 ft of the wall.
+    pass_if: Gravel, river rock, pavers, concrete or bare soil along the wall.
+    unsure_if: Ground near the wall not visible, or can't tell how far the mulch is from the wall.
+    fix: Rake out the mulch within 5 ft; replace with gravel or pavers.
+    cost: "$0–150, an afternoon"
+    photo_tip: Stand back so the bottom of the wall and the ground in front of it are both in frame.
+
+  - id: debris_roof_gutters
+    name: Leaves on the roof or in gutters
+    visibility: easy
+    basis: [L, D]
+    discount_item: "5-foot ember-resistant zone around the structure"
+    look_for: Roof surface and gutters. Piles of leaves, pine needles, twigs.
+    fail_if: Visible leaves/needles collected on the roof, in valleys or in gutters.
+    pass_if: Roof and gutters visibly clear.
+    unsure_if: Roof or gutters not visible from this angle.
+    fix: Clear the roof and gutters; consider gutter guards (metal).
+    cost: "$0 DIY, ~$150–300 for a gutter cleaning"
+    photo_tip: Shoot the roof edge from across the street or from a second-floor window.
+
+  - id: branches_over_roof
+    name: Dead branches over the roof
+    visibility: easy
+    basis: [L, D]
+    discount_item: "Trim trees and remove brush in compliance with state and local defensible space laws"
+    look_for: Tree or shrub branches above or touching the roof, walls or windows; are they dead (brown, leafless, brittle)?
+    fail_if: Dead branches overhang the roof or touch the walls/windows.
+    pass_if: No branches over the roof, or only healthy green branches with clear space.
+    unsure_if: Branches overhang but can't tell if dead; flag as "recommended trim".
+    note: State law targets DEAD branches over roofs; living overhanging branches are a recommendation, not a violation.
+    fix: Cut back dead branches; keep living ones clear of the roof.
+    cost: "$0 DIY for small limbs, $300+ for a tree service"
+    photo_tip: Include the roofline and the tree in one shot.
+
+  - id: branches_chimney
+    name: Branches within 10 ft of a chimney
+    visibility: easy
+    basis: [L, D]
+    discount_item: "Trim trees and remove brush in compliance with state and local defensible space laws"
+    look_for: A chimney or stovepipe and any branches near it.
+    fail_if: Any branch (dead or alive) within ~10 ft of the chimney or stovepipe outlet.
+    pass_if: Chimney present and clear by 10 ft, or no chimney (then mark not_applicable).
+    unsure_if: Distance hard to judge from the photo.
+    fix: Trim all branches back 10 ft from the chimney.
+    cost: "$0–300"
+    photo_tip: Get the chimney and nearby trees in one frame.
+
+  - id: tall_dry_grass
+    name: Tall or dry grass and weeds
+    visibility: easy
+    basis: [G, L, D]
+    discount_item: "Trim trees and remove brush in compliance with state and local defensible space laws"
+    look_for: Grass and weeds in the yard; height and whether brown/dry.
+    fail_if: Annual grass or weeds clearly taller than ~4 inches, or dead/dry brown vegetation near the house.
+    pass_if: Grass mowed short (~4 in or less) and no dead weeds near the house.
+    unsure_if: Height can't be judged (no reference object).
+    fix: Mow annual grass to 4 inches or less; pull dead weeds.
+    cost: "$0, an hour"
+    photo_tip: Put a shoe or a water bottle in the grass for scale.
+
+  - id: fence_attached
+    name: Wood fence touching the house
+    visibility: easy
+    basis: [D, P]
+    discount_item: "5-foot ember-resistant zone around the structure"
+    look_for: Where a fence or gate meets the house wall; its material.
+    fail_if: A wood (or vinyl) fence or gate connects to the wall, or ends within 5 ft of it.
+    pass_if: The last 5 ft next to the house is metal/masonry, or the fence doesn't come near the house.
+    unsure_if: Can't see where the fence meets the wall.
+    fix: Replace the 5 ft of fence nearest the house with a metal gate or panel.
+    cost: "$150–600"
+    photo_tip: Stand where you can see the fence and the corner of the house together.
+
+  - id: stuff_against_walls
+    name: Things piled against the house
+    visibility: easy
+    basis: [D, P]
+    discount_item: "5-foot ember-resistant zone around the structure"
+    look_for: Firewood, lumber, cardboard, trash/recycling bins, patio cushions, brooms, propane tanks within 5 ft of the walls.
+    fail_if: Any of those stored against or within 5 ft of the wall.
+    pass_if: Nothing combustible stored next to the walls.
+    unsure_if: Ground along the wall partly hidden.
+    fix: Move firewood and bins 5+ ft away (firewood ideally 30 ft).
+    cost: "$0, 20 minutes"
+    photo_tip: Walk the side yards; that's where bins and wood piles live.
+
+  - id: plants_against_walls
+    name: Plants hugging the walls
+    visibility: easy
+    basis: [D, P]
+    discount_item: "5-foot ember-resistant zone around the structure"
+    look_for: Shrubs, hedges, vines, dead plants within 5 ft of the wall, especially woody or dry ones.
+    fail_if: Woody shrubs, hedges, vines on the wall, or any dead plants within 5 ft.
+    pass_if: Open 5-ft band, or only low, green, well-watered non-woody plants (e.g. a few potted flowers).
+    unsure_if: Can't tell plant type or distance.
+    note: The proposed Zone 0 rule limits plants rather than banning them; low watered non-woody plants may be allowed.
+    fix: Remove woody plants and dead vegetation within 5 ft; keep only low watered plants.
+    cost: "$0–200"
+    photo_tip: Show the wall and the plants beside it.
+
+  - id: under_deck
+    name: Junk or brush under the deck
+    visibility: easy
+    basis: [D]
+    discount_item: "Cleared vegetation and debris from under decks"
+    look_for: The space under any deck or raised porch.
+    fail_if: Leaves, weeds, firewood, lumber or stored items under the deck.
+    pass_if: Clear under the deck, or no deck (not_applicable).
+    unsure_if: Can't see under the deck.
+    fix: Clear everything out from under the deck.
+    cost: "$0, an hour"
+    photo_tip: Crouch and shoot under the deck.
+
+  - id: wood_shake_roof
+    name: Wood shake roof
+    visibility: easy
+    basis: [D]
+    discount_item: "Class A fire-rated roof"
+    look_for: Roof covering material.
+    fail_if: Wood shakes or wood shingles.
+    pass_if: Clay or concrete tile, metal, or composition/asphalt shingle (usually Class A; confirm on paperwork).
+    unsure_if: Material can't be identified.
+    note: A photo can rule OUT a Class A roof (wood shake) but can't prove one is Class A; ask for the roofing paperwork.
+    fix: At the next re-roof, choose a Class A roof.
+    cost: "$15k+ (do it at replacement time)"
+    photo_tip: A clear shot of the roof surface.
+
+  - id: shed_distance
+    name: Shed close to the house
+    visibility: easy
+    basis: [D]
+    discount_item: "Move sheds and outbuildings at least 30 feet away"
+    look_for: Sheds, playhouses, detached outbuildings and their distance from the house.
+    fail_if: A shed or outbuilding clearly closer than ~30 ft to the house.
+    pass_if: None, or clearly 30+ ft away.
+    unsure_if: Distance unclear.
+    fix: Move small sheds 30 ft away, or replace with a metal one.
+    cost: "$0–500"
+    photo_tip: Get the shed and the house in one frame.
+
+  # ---------- MEDIUM: visible, but needs a good angle ----------
+  - id: wall_base_6in
+    name: 6 inches of noncombustible wall at the bottom
+    visibility: medium
+    basis: [D]
+    discount_item: "Noncombustible 6 inches at the bottom of walls"
+    look_for: The bottom of the exterior wall where it meets the ground.
+    fail_if: Wood siding, wood trim or other combustible material within 6 in of the ground.
+    pass_if: Stucco, brick, stone, concrete or metal for at least the bottom 6 inches.
+    unsure_if: Base hidden by plants/mulch or material unclear.
+    fix: Add a metal or concrete flashing strip at the base, or pull soil/mulch back.
+    cost: "$50–500"
+    photo_tip: Close-up of the base of the wall, from ground level.
+
+  - id: enclosed_eaves
+    name: Enclosed eaves
+    visibility: medium
+    basis: [D]
+    discount_item: "Enclosed eaves"
+    look_for: The underside of the roof overhang.
+    fail_if: Open eaves — exposed rafter tails / gaps visible from below.
+    pass_if: Boxed-in eaves with a flat soffit.
+    unsure_if: Underside not visible.
+    fix: Box in the eaves with noncombustible soffit material.
+    cost: "$1k+"
+    photo_tip: Stand under the overhang and shoot straight up.
+
+  # ---------- HARD: answer UNSURE and ask for more ----------
+  - id: vents
+    name: Ember-resistant vents
+    visibility: hard
+    basis: [D]
+    discount_item: "Ember- and fire-resistant vents"
+    look_for: Foundation/crawlspace vents, gable vents, eave vents and their mesh.
+    fail_if: Mesh clearly coarse (well over 1/8 inch, e.g. 1/4 inch hardware cloth) or torn/missing screens.
+    pass_if: Labeled ember-resistant vent, or fine mesh with a coin in the shot showing openings ≤ 1/8 inch.
+    unsure_if: Default. Mesh size can't be judged without a close-up and a scale reference.
+    fix: Replace vent screens with 1/8-inch metal mesh, or install ember-resistant vents.
+    cost: "$10–60 per vent"
+    photo_tip: Close-up of the vent with a coin held against the mesh.
+
+  - id: windows
+    name: Double-pane windows or shutters
+    visibility: hard
+    basis: [D]
+    discount_item: "Double pane windows or added shutters"
+    look_for: Window frames; a spacer bar between two panes; shutters.
+    fail_if: Never from a photo alone.
+    pass_if: Fire shutters clearly visible, or a dual-pane spacer clearly visible at the glass edge.
+    unsure_if: Default. Ask for the window sticker or receipt.
+    fix: Dual-pane (tempered) at the next window replacement, or add shutters.
+    cost: "$500+ per window"
+    photo_tip: Close-up of a window corner where the glass meets the frame.
+
+# Community-level discounts — not visible in photos; ask the user.
+community:
+  - id: firewise
+    discount_item: "Neighborhoods can form a Firewise USA community"
+    note: The insurer verifies Firewise membership itself (DOI FAQ); just ask "Is your neighborhood Firewise USA?"
+  - id: frrc
+    discount_item: "Cities, counties, and local districts can become certified as a Fire Risk Reduction Community"
+
+# Rights worth showing in the evidence letter (DOI FAQ, Sept 2026)
+homeowner_rights:
+  - Insurers must give you your wildfire risk score when you apply, before renewal or non-renewal, and on request after a mitigation.
+  - They must explain the score, how to lower it and how much you could save.
+  - You can appeal an inaccurate score to the insurer; if denied, contact the Department of Insurance (800-927-4357).
+  - After finishing work, tell your insurer or agent; they may ask for proof or an inspection. Savings apply from the next policy period.
+  - The FAIR Plan also offers these discounts.
