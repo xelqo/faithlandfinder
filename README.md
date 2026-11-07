@@ -79,6 +79,7 @@ Claude calls). Deploys to Vercel as-is; set `ANTHROPIC_API_KEY` in the project s
 | Satellite imagery | Esri World Imagery | Nov 7, 2026 |
 | Religious nonprofits | ProPublica Nonprofit Explorer API (IRS data) | Nov 7, 2026 |
 | Address lookup | US Census Geocoder | Nov 7, 2026 |
+| Coverage borders on the map | US Census TIGERweb (county + incorporated places) | Nov 7, 2026 |
 | SB 4 rules | Gov Code 65913.16; HCD SB 4 fact sheet (`data/hcd_sb4.pdf`): 100% affordable, by right, land owned by a religious institution before Jan 1 2024, ≤1 parking space per home (0 near transit). Site exclusions via Gov Code 65913.4(a)(6) (fire, flood, fault zones and more): **check the exact exceptions in the statute** | Nov 6, 2026 |
 | Parking kept for worship | AB 2244 (2022): up to 50% of religious-use parking can be removed for housing | Nov 6, 2026 |
 | Density | SB 4: 30 homes/acre in residential zones in a metro county, 40 in non-residential zones. When the zone type is unclear we use 30 | Nov 6, 2026 |
