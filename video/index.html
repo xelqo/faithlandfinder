@@ -35,7 +35,8 @@
   .thumb { width: 330px; height: 330px; border-radius: 26px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 20px 50px rgba(0,0,0,.6); opacity: 0; position: relative; }
   .thumb img { width: 100%; height: 100%; object-fit: cover; }
   .thumb span { position: absolute; left: 12px; bottom: 12px; background: rgba(0,0,0,.7); padding: 4px 12px; border-radius: 10px; font-weight: 900; font-size: 22px; }
-  .thumbs-row { position: absolute; right: 100px; bottom: 90px; display: flex; gap: 24px; }
+  .cap { position: absolute; left: 50%; bottom: 70px; transform: translateX(-50%); background: rgba(10,8,20,.78); color: #fff; font-size: 50px; font-weight: 900; padding: 12px 30px; border-radius: 18px; white-space: nowrap; opacity: 0; z-index: 50; letter-spacing: -.3px; }
+  .thumbs-row { position: absolute; right: 100px; bottom: 200px; display: flex; gap: 24px; }
 
   /* S4: the law */
   .law { position: absolute; left: 50%; top: 50%; width: 1360px; transform: translate(-50%, -50%); background: #fff; color: #221E33; border-radius: 40px; padding: 70px 80px; box-shadow: 0 40px 100px rgba(0,0,0,.6); }
@@ -107,7 +108,7 @@
 <section class="scene" id="s1">
   <div class="bg" id="s1bg" style="background-image:url(assets/map_dark.jpg)"></div>
   <div class="shade"></div>
-  <div class="col" style="width:1700px">
+  <div class="col" style="width:1150px">
     <div class="kicker line">Orange County, California</div>
     <div class="huge line"><span id="price">$0</span></div>
     <div class="mid line">median home · only <span class="hl">15%</span> of households can afford one</div>
@@ -138,6 +139,14 @@
       <span class="chip">If the site passes:</span>
       <span class="chip x">Fire zone</span><span class="chip x">Flood zone</span><span class="chip x">Fault zone</span>
       <span class="chip x">Wetlands</span><span class="chip">Owned before 2024</span>
+    </div>
+  </div>
+  <div class="lawcard" id="lease">
+    <span class="tag" style="background:#1F9D57">No sale needed</span>
+    <h2>The church <span style="color:#1F9D57">keeps its land</span> and its sanctuary.</h2>
+    <p>A nonprofit leases the land long-term and pays to build.</p>
+    <div class="chips">
+      <span class="chip">✓ Ground lease</span><span class="chip">✓ Developer finances it</span><span class="chip">✓ Lease income</span>
     </div>
   </div>
   <div class="src" style="left:auto; right:120px; bottom:30px">OpenStreetMap · Esri World Imagery</div>
@@ -178,9 +187,9 @@
   <div class="bg" style="background-image:url(assets/map_dark.jpg)"></div>
   <div class="shade"></div>
   <div class="stats">
-    <div class="stat"><b>51</b><span>places of worship scanned</span></div>
-    <div class="stat"><b>15</b><span>sites checked by Claude</span></div>
-    <div class="stat"><b>~784</b><span>affordable homes possible (estimate)</span></div>
+    <div class="stat"><b>Santa Ana</b><span>one city</span></div>
+    <div class="stat"><b id="stClean">11 of 15</b><span>sites checked pass the hazard tests</span></div>
+    <div class="stat"><b id="stHomes">~680</b><span>homes, on paper</span></div>
   </div>
   <div class="end" id="end">
     <div class="logo">⛪ Faith Land Finder</div>
@@ -189,6 +198,7 @@
   </div>
 </section>
 
+<div class="cap" id="cap"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 (async () => {
@@ -198,6 +208,7 @@
 
   $("#pins").innerHTML = D.pins.map((p) => `<div class="pin" style="left:${p.x}px;top:${p.y}px"></div>`).join("");
   $("#thumbs").innerHTML = D.thumbs.map((t) => `<div class="thumb"><img src="${t.img}"><span>${t.label}</span></div>`).join("");
+  if (D.stats) { $("#stClean").textContent = `${D.stats.clean} of ${D.stats.checked}`; $("#stHomes").textContent = `~${D.stats.homes}`; }
   const F = D.focus; // pixel position of the demo church on the map
   Object.assign($("#focus").style, { left: F.x + "px", top: F.y + "px" });
 
@@ -206,6 +217,10 @@
   const lines = (sel, at, gap = 0.6) => tl.fromTo(`${sel} .line`, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, stagger: gap, ease: "power3.out" }, at);
   const counter = (el, to, at, dur, fmt) => { const o = { v: 0 }; tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => (el.textContent = fmt(o.v)) }, at); };
   const T = D.t; // scene starts, fitted to the voiceover: s2 = map, s3 = demo, s4 = outro, end
+  // captions: plain swap, no animation
+  const CAPS = await (await fetch("assets/captions.json")).json().catch(() => []);
+  CAPS.forEach((c) => { tl.set("#cap", { textContent: c.text, opacity: 1 }, c.t0); });
+  CAPS.forEach((c, i) => { const n = CAPS[i + 1]; if (!n || n.t0 > c.t1 + 0.01) tl.set("#cap", { opacity: 0 }, c.t1 + 0.15); });
 
   // S1: problem
   show("#s1", 0);
@@ -225,51 +240,56 @@
   counter($("#pinCount"), D.pins.length, m + 0.4, 2.6, (v) => Math.round(v));
   tl.fromTo(".thumb", { opacity: 0, y: 60, rotate: -4 }, { opacity: 1, y: 0, rotate: 0, duration: 0.5, stagger: 0.3, ease: "back.out(1.6)" }, m + 3.0);
   // the law slides in on the map
-  const lawAt = m + Math.max(5.2, (mEnd - m) * 0.42);
+  const lawAt = m + Math.max(5.0, (mEnd - m) * 0.3);
+  const leaseAt = lawAt + Math.max(3.8, (mEnd - m) * 0.25);
   tl.to(".thumb", { opacity: 0, y: 40, duration: 0.3, stagger: 0.08 }, lawAt - 0.4);
   tl.fromTo("#law", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, lawAt);
-  tl.to("#law .chip", { opacity: 1, duration: 0.25, stagger: 0.3 }, lawAt + 1.4);
+  tl.to("#law .chip", { opacity: 1, duration: 0.25, stagger: 0.25 }, lawAt + 1.2);
+  tl.to("#law", { opacity: 0, x: -60, duration: 0.4 }, leaseAt - 0.3);
+  tl.fromTo("#lease", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, leaseAt);
+  tl.to("#lease .chip", { opacity: 1, duration: 0.25, stagger: 0.3 }, leaseAt + 1.0);
   // dive into one church
   const dive = mEnd - 2.0;
-  tl.to(["#law", "#counter", "#s2 .src"], { opacity: 0, duration: 0.4 }, dive - 0.3);
+  tl.to(["#lease", "#counter", "#s2 .src"], { opacity: 0, duration: 0.4 }, dive - 0.3);
   tl.to("#focus", { opacity: 1, duration: 0.3 }, dive);
   tl.fromTo("#focus", { scale: 2.2 }, { scale: 1, duration: 0.5, ease: "power3.out" }, dive);
   tl.to("#mapwrap", { scale: 5, x: (960 - F.x) * 5, y: (540 - F.y) * 5, duration: 1.7, ease: "power3.in" }, dive + 0.3);
   hide("#s2", mEnd - 0.15);
 
-  // S3: demo, consolidated
-  const d = T.s3;
+  // S3: demo, consolidated (squeezed to fit the voice: k < 1 when the paragraph is short)
+  const d0 = T.s3, k = Math.min(1, (T.s4 - T.s3) / 12.5);
+  const d = d0;
   show("#s3", d - 0.1);
-  const type = (el, text, at, cps = 40) => { const o = { n: 0 }; tl.to(o, { n: text.length, duration: text.length / cps, ease: "none", onUpdate: () => (el.textContent = text.slice(0, Math.round(o.n))) }, at); };
-  tl.set("#f1", { attr: { class: "field on" } }, d + 0.1);
-  type($("#t1"), "3800 S Fairview St, Santa Ana, CA", d + 0.2);
-  tl.set("#c1", { opacity: 0 }, d + 1.1); tl.set("#c2", { opacity: 1 }, d + 1.1);
-  tl.set("#f1", { attr: { class: "field" } }, d + 1.1); tl.set("#f2", { attr: { class: "field on" } }, d + 1.1);
-  type($("#t2"), "Calvary Chapel of Costa Mesa", d + 1.15);
-  tl.to("#goBtn", { y: 7, boxShadow: "0 0 0 #4233C4", duration: 0.1, yoyo: true, repeat: 1 }, d + 1.95);
-  tl.to("#form", { opacity: 0, y: -40, duration: 0.3 }, d + 2.2);
-  tl.to("#steps", { opacity: 1, duration: 0.3 }, d + 2.3);
-  tl.to("#spin", { rotate: 360 * 3, duration: 2.6, ease: "none" }, d + 2.3);
-  document.querySelectorAll(".step").forEach((el, i) => tl.set(el, { attr: { class: el.className + " done" } }, d + 2.6 + i * 0.5));
-  tl.to("#steps", { opacity: 0, duration: 0.3 }, d + 4.7);
-  tl.to("#shot", { opacity: 1, duration: 0.3 }, d + 4.8);
+  const type = (el, text, at, cps = 40 / k) => { const o = { n: 0 }; tl.to(o, { n: text.length, duration: text.length / cps, ease: "none", onUpdate: () => (el.textContent = text.slice(0, Math.round(o.n))) }, at); };
+  tl.set("#f1", { attr: { class: "field on" } }, d + k * 0.1);
+  type($("#t1"), "3800 S Fairview St, Santa Ana, CA", d + k * 0.2);
+  tl.set("#c1", { opacity: 0 }, d + k * 1.1); tl.set("#c2", { opacity: 1 }, d + k * 1.1);
+  tl.set("#f1", { attr: { class: "field" } }, d + k * 1.1); tl.set("#f2", { attr: { class: "field on" } }, d + k * 1.1);
+  type($("#t2"), "Calvary Chapel of Costa Mesa", d + k * 1.15);
+  tl.to("#goBtn", { y: 7, boxShadow: "0 0 0 #4233C4", duration: 0.1, yoyo: true, repeat: 1 }, d + k * 1.95);
+  tl.to("#form", { opacity: 0, y: -40, duration: 0.3 }, d + k * 2.2);
+  tl.to("#steps", { opacity: 1, duration: 0.3 }, d + k * 2.3);
+  tl.to("#spin", { rotate: 360 * 3, duration: 2.6, ease: "none" }, d + k * 2.3);
+  document.querySelectorAll(".step").forEach((el, i) => tl.set(el, { attr: { class: el.className + " done" } }, d + k * 2.6 + i * 0.5));
+  tl.to("#steps", { opacity: 0, duration: 0.3 }, d + k * 4.7);
+  tl.to("#shot", { opacity: 1, duration: 0.3 }, d + k * 4.8);
   const S = D.scroll;
   const dEnd = T.s4;
-  const stop2 = d + 7.4;
-  tl.to("#shot", { y: -S.fit, duration: 0.7, ease: "power2.inOut" }, d + 5.2);
+  const stop2 = d + k * 7.4;
+  tl.to("#shot", { y: -S.fit, duration: 0.7, ease: "power2.inOut" }, d + k * 5.2);
   const co = (id, at, out) => { tl.fromTo(id, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, at); tl.to(id, { opacity: 0, duration: 0.25 }, out); };
-  co("#co1", d + 5.8, stop2 - 0.2); co("#co2", d + 6.0, stop2 - 0.2);
+  co("#co1", d + k * 5.8, stop2 - 0.2); co("#co2", d + k * 6.0, stop2 - 0.2);
   tl.to("#shot", { y: -S.land, duration: 0.8, ease: "power2.inOut" }, stop2);
-  co("#co3", stop2 + 0.6, stop2 + 2.0);
-  tl.to("#shot", { y: -S.brief, duration: 0.9, ease: "power2.inOut" }, stop2 + 2.0);
-  co("#co4", stop2 + 2.6, dEnd - 0.3);
-  tl.to("#shot", { y: -S.brief - 380, duration: Math.max(1, dEnd - stop2 - 3.3), ease: "none" }, stop2 + 2.95);
+  co("#co3", stop2 + k * 0.6, stop2 + k * 2.0);
+  tl.to("#shot", { y: -S.brief, duration: 0.9, ease: "power2.inOut" }, stop2 + k * 2.0);
+  co("#co4", stop2 + k * 2.6, dEnd - 0.3);
+  tl.to("#shot", { y: -S.brief - 380, duration: Math.max(1, dEnd - stop2 - 3.3), ease: "none" }, stop2 + k * 2.95);
   hide("#s3", dEnd - 0.25);
 
   // S4: outro
   show("#s4", T.s4);
   tl.to(".stat", { opacity: 1, duration: 0.4, stagger: 0.35 }, T.s4 + 0.2);
-  const endAt = Math.max(T.s4 + 2.6, T.end - 3.2);
+  const endAt = T.tag ? Math.max(T.s4 + 2.6, T.tag) : Math.max(T.s4 + 2.6, T.end - 3.2);
   tl.to(".stat", { opacity: 0, duration: 0.3 }, endAt - 0.35);
   tl.to("#end", { opacity: 1, duration: 0.5 }, endAt);
   tl.to({}, { duration: 0.01 }, T.end);

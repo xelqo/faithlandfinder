@@ -14,10 +14,11 @@ function go(id) {
 // ---------- home ----------
 function renderHome() {
   const s = DATA.sites;
-  const homes = s.reduce((t, x) => t + x.estimate.homes, 0);
+  const clean = s.filter((x) => !x.tests.some((t) => t.status === "fail"));
+  const homes = clean.reduce((t, x) => t + x.estimate.homes, 0);
   const strong = s.filter((x) => x.claude?.ownership.lead === "strong").length;
   $("#stats").innerHTML = `
-    <div class="stat hero"><b>~${homes.toLocaleString()}</b><span>homes possible (estimate)</span></div>
+    <div class="stat hero"><b>~${homes.toLocaleString()}</b><span>homes on paper, on the ${clean.length} sites that pass every hazard test</span></div>
     <div class="stat"><b>${s.length}</b><span>sites checked by Claude</span></div>
     <div class="stat"><b>${strong}</b><span>strong ownership leads</span></div>`;
   $("#listNote").textContent = `${DATA.area}. ${DATA.scanned} places of worship scanned from public maps, ${DATA.parcels} parcels matched, top ${s.length} reviewed. Updated ${new Date(DATA.built_at).toLocaleDateString()}.`;

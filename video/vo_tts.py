@@ -6,7 +6,7 @@ rate = sys.argv[2] if len(sys.argv) > 2 else "178"
 text = open("voiceover.md").read().split("---")[0]
 blocks = [b.strip() for b in re.split(r"\*\*\[[^\]]+\]\*\*", text)[1:]]
 assert len(blocks) == 4, len(blocks)
-MIN = [5.5, 13.0, 12.5, 5.0]   # shortest each scene's animation can be
+MIN = [5.5, 17.0, 12.5, 7.0]   # shortest each scene's animation can be
 os.makedirs("vo", exist_ok=True)
 starts, t, files = [], 0.4, []
 for i, b in enumerate(blocks):

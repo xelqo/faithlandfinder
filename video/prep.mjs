@@ -53,5 +53,7 @@ const off = await page.evaluate(() => {
 await browser.close();
 const scroll = Object.fromEntries(Object.entries(off).map(([key, v]) => [key, Math.round(v * k)]));
 const t = JSON.parse(fs.readFileSync("timing.json", "utf8"));
-fs.writeFileSync("assets/video_data.json", JSON.stringify({ pins, thumbs, scroll, t, focus }, null, 1));
+const clean = sites.filter((x) => !x.tests.some((q) => q.status === "fail"));
+const stats = { checked: sites.length, clean: clean.length, homes: Math.round(clean.reduce((a, x) => a + x.estimate.homes, 0) / 10) * 10 };
+fs.writeFileSync("assets/video_data.json", JSON.stringify({ pins, thumbs, scroll, t, focus, stats }, null, 1));
 console.log("pins", pins.length, "scroll", scroll, "timing", t);
