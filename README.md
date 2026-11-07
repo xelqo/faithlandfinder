@@ -30,7 +30,7 @@ congregation's facilities chair (scenario F01). Any address can be checked live 
 - **Live check:** type any Orange County address and the whole pipeline runs on the spot.
 
 **Demo video:** uploaded on the hub
-**Live demo:** [Vercel link]
+**Live demo:** https://faithlandfinder.vercel.app
 
 ## How Claude is used
 
@@ -56,7 +56,7 @@ Needs Node.js 20+.
 git clone <this repo> && cd <repo>
 npm install
 cp .env.example .env        # add ANTHROPIC_API_KEY to get Claude's read on live checks
-npm run dev                 # open http://localhost:3000
+npm run dev                 # open http://localhost:3000 (dev server: scripts/dev-server.js)
 ```
 
 The ranked list works without a key (it ships in `public/sites.json`). Without a key, live checks still show
