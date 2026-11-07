@@ -84,68 +84,69 @@
   .end .logo { font-size: 130px; font-weight: 900; letter-spacing: -4px; }
   .end .tag { font-size: 46px; font-weight: 800; color: var(--muted); margin-top: 16px; }
   .end .by { font-size: 30px; font-weight: 800; color: rgba(255,255,255,.45); margin-top: 60px; }
+
+  /* v2: map-first */
+  #mapwrap { position: absolute; inset: 0; transform-origin: 50% 50%; }
+  #mapwrap .bg { inset: 0; }
+  .lawcard { position: absolute; right: 90px; top: 50%; width: 760px; transform: translateY(-50%); background: #fff; color: #221E33; border-radius: 34px; padding: 44px 48px; box-shadow: 0 40px 100px rgba(0,0,0,.6); opacity: 0; }
+  .lawcard .tag { display: inline-block; background: var(--brand2); color: #fff; font-weight: 900; font-size: 30px; padding: 6px 20px; border-radius: 14px; }
+  .lawcard h2 { font-size: 52px; font-weight: 900; line-height: 1.1; margin: 20px 0 10px; letter-spacing: -1px; }
+  .lawcard p { font-size: 24px; color: #6D6884; font-weight: 700; }
+  .lawcard .chips { gap: 10px; margin-top: 22px; }
+  .lawcard .chip { font-size: 24px; padding: 8px 16px; border-radius: 12px; }
+  .focus { position: absolute; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; border: 6px solid var(--gold); opacity: 0; box-shadow: 0 0 0 9999px rgba(14,12,24,0); }
+  .minibill { margin-top: 26px; width: 900px; height: 70px; border-radius: 18px; overflow: hidden; display: flex; background: rgba(255,255,255,.12); }
+  .minibill i { display: flex; align-items: center; height: 100%; font-style: normal; font-weight: 900; white-space: nowrap; overflow: hidden; width: 0; }
+  .minibill .land { background: var(--brand); padding-left: 22px; font-size: 30px; }
+  .minibill .rest { background: rgba(255,255,255,.22); padding-left: 16px; font-size: 22px; color: rgba(255,255,255,.8); }
 </style>
 </head>
 <body>
 
-<!-- S1: price -->
+<!-- S1: the problem, one beat -->
 <section class="scene" id="s1">
   <div class="bg" id="s1bg" style="background-image:url(assets/map_dark.jpg)"></div>
   <div class="shade"></div>
-  <div class="col">
+  <div class="col" style="width:1700px">
     <div class="kicker line">Orange County, California</div>
     <div class="huge line"><span id="price">$0</span></div>
-    <div class="mid line">median home price</div>
-    <div class="big line" style="margin-top:40px">Only <span class="hl">15%</span> of households<br>can afford one.</div>
+    <div class="mid line">median home · only <span class="hl">15%</span> of households can afford one</div>
+    <div class="mid line" style="margin-top:50px">The biggest cost of building affordable homes? <span class="pur" style="font-weight:900">Land.</span></div>
+    <div class="minibill line"><i class="land" id="land">Land $360k</i><i class="rest" id="rest">Everything else $175k</i></div>
   </div>
-  <div class="src">Source: C.A.R., Q3 2026 (via UCI Impact Lab brief)</div>
+  <div class="src">C.A.R. Q3 2026 · example deal, rounded (UCI Impact Lab background brief)</div>
 </section>
 
-<!-- S2: land is the bill -->
+<!-- S2: the map (bulk of the video) -->
 <section class="scene" id="s2">
-  <div class="bg" style="background-image:url(assets/map_dark.jpg)"></div>
-  <div class="shade full"></div>
-  <div class="col" style="width:1600px">
-    <div class="kicker line">The cost to build one affordable home</div>
-    <div class="big line">The biggest line on the bill is <span class="pur">land.</span></div>
-    <div class="bill line"><i class="land" id="land">Land $360k</i><i class="rest" id="rest">Everything else $175k</i></div>
-    <div class="mid line" style="margin-top:60px">And coastal SoCal has <span class="hl">almost no vacant land</span> left.</div>
+  <div id="mapwrap">
+    <div class="bg" id="s2bg" style="background-image:url(assets/map_sat.jpg)"></div>
+    <div class="shade full" style="background:rgba(14,12,24,.35)"></div>
+    <div id="pins"></div>
+    <div class="focus" id="focus"></div>
   </div>
-  <div class="src">Example deal, rounded (UCI Impact Lab background brief)</div>
-</section>
-
-<!-- S3: churches -->
-<section class="scene" id="s3">
-  <div class="bg" id="s3bg" style="background-image:url(assets/map_sat.jpg)"></div>
-  <div class="shade full" style="background:rgba(14,12,24,.35)"></div>
-  <div id="pins"></div>
-  <div class="counter">
+  <div class="counter" id="counter">
     <div class="huge line" style="font-size:180px"><span id="pinCount">0</span></div>
     <div class="mid line">places of worship<br>in the Santa Ana area</div>
   </div>
   <div class="thumbs-row" id="thumbs"></div>
+  <div class="lawcard" id="law">
+    <span class="tag">SB 4 · since July 2024</span>
+    <h2>Churches can build <span style="color:#5B4BE8">100% affordable homes</span> on their land, approved by right.</h2>
+    <p>Gov Code 65913.16 · up to 50% of church parking can go (AB 2244)</p>
+    <div class="chips">
+      <span class="chip">If the site passes:</span>
+      <span class="chip x">Fire zone</span><span class="chip x">Flood zone</span><span class="chip x">Fault zone</span>
+      <span class="chip x">Wetlands</span><span class="chip">Owned before 2024</span>
+    </div>
+  </div>
   <div class="src" style="left:auto; right:120px; bottom:30px">OpenStreetMap · Esri World Imagery</div>
 </section>
 
-<!-- S4: the law -->
-<section class="scene" id="s4">
-  <div class="bg" style="background-image:url(assets/map_sat.jpg); filter: blur(8px) brightness(.5)"></div>
-  <div class="law" id="law">
-    <span class="tag">SB 4 · since July 2024</span>
-    <h2>Churches can build <span style="color:#5B4BE8">100% affordable homes</span> on their land, approved by right.</h2>
-    <p>Gov Code 65913.16 · No public hearing · Up to 50% of church parking can go (AB 2244)</p>
-    <div class="chips" id="chips">
-      <span class="chip">But every site must pass:</span>
-      <span class="chip x">Very high fire zone</span><span class="chip x">Flood zone</span><span class="chip x">Fault zone</span>
-      <span class="chip x">Wetlands</span><span class="chip x">Farmland</span><span class="chip">Owned before 2024</span>
-    </div>
-  </div>
-</section>
-
-<!-- S5: demo -->
-<section class="scene" id="s5">
+<!-- S3: demo, consolidated -->
+<section class="scene" id="s3">
   <div class="bg" style="background:#1A1630"></div>
-  <div class="demo-cap" id="demoCap">Faith Land Finder</div>
+  <div class="demo-cap">Faith Land Finder</div>
   <div class="browser">
     <div class="bar"><i></i><i></i><i></i><div class="url">faith-land-finder · check any site</div></div>
     <div class="viewport">
@@ -158,34 +159,29 @@
       <div class="steps" id="steps">
         <div class="spin" id="spin"></div>
         <h3>Checking 3800 S Fairview St</h3>
-        <div class="step"><b>✓</b>Parcel + buildings (OC county maps)</div>
-        <div class="step"><b>✓</b>Zoning (SCAG)</div>
+        <div class="step"><b>✓</b>Parcel, buildings, zoning</div>
         <div class="step"><b>✓</b>Fire, flood, landslide, transit maps</div>
-        <div class="step"><b>✓</b>Satellite image</div>
-        <div class="step claude"><b>✦</b>Claude reads the land + records</div>
+        <div class="step claude"><b>✦</b>Claude reads the satellite + records</div>
         <div class="step claude"><b>✦</b>Claude writes the brief</div>
       </div>
       <div class="shot" id="shot" style="opacity:0"><img src="assets/report.png" /></div>
     </div>
   </div>
-  <div class="callout" id="co1" style="left:80px; top:300px">Parcel found<small>9.96 acres · APN 414-271-02</small></div>
-  <div class="callout purple" id="co2" style="right:70px; top:380px">Fit score<small>every point explained</small></div>
-  <div class="callout" id="co3" style="left:70px; top:560px">~134 homes<small>formula + assumptions on screen</small></div>
-  <div class="callout purple" id="co4" style="right:60px; top:300px">Claude saw parking<br>+ a ball field<small>and flagged who might use it</small></div>
-  <div class="callout" id="co5" style="left:60px; top:420px">A brief for the<br>congregation<small>what fits · what they keep · unknowns</small></div>
-  <div class="callout purple" id="co6" style="right:60px; top:560px">Every test sourced<small>"unknown" where it's unknown</small></div>
+  <div class="callout purple" id="co1" style="right:60px; top:330px">Fit score<small>every point explained</small></div>
+  <div class="callout" id="co2" style="left:60px; top:560px">~134 homes<small>formula on screen</small></div>
+  <div class="callout purple" id="co3" style="right:60px; top:300px">Claude saw parking<br>+ a ball field<small>who owns it · red flags</small></div>
+  <div class="callout" id="co4" style="left:60px; top:520px">A brief for the<br>congregation<small>every fact sourced</small></div>
 </section>
 
-<!-- S6: outro -->
-<section class="scene" id="s6">
+<!-- S4: outro -->
+<section class="scene" id="s4">
   <div class="bg" style="background-image:url(assets/map_dark.jpg)"></div>
   <div class="shade"></div>
   <div class="stats">
-    <div class="stat"><b id="o1">51</b><span>places of worship scanned</span></div>
-    <div class="stat"><b id="o2">15</b><span>sites checked by Claude</span></div>
-    <div class="stat"><b id="o3">~784</b><span>affordable homes possible (estimate)</span></div>
+    <div class="stat"><b>51</b><span>places of worship scanned</span></div>
+    <div class="stat"><b>15</b><span>sites checked by Claude</span></div>
+    <div class="stat"><b>~784</b><span>affordable homes possible (estimate)</span></div>
   </div>
-  <div class="listshot" id="listshot"><img src="assets/list.png" /></div>
   <div class="end" id="end">
     <div class="logo">⛪ Faith Land Finder</div>
     <div class="tag">The next affordable home might already have a steeple.</div>
@@ -199,86 +195,89 @@
   const D = await (await fetch("assets/video_data.json")).json();
   const $ = (s) => document.querySelector(s);
   const tl = gsap.timeline({ paused: true });
-  window.TL = tl;
 
-  // pins + thumbs
   $("#pins").innerHTML = D.pins.map((p) => `<div class="pin" style="left:${p.x}px;top:${p.y}px"></div>`).join("");
   $("#thumbs").innerHTML = D.thumbs.map((t) => `<div class="thumb"><img src="${t.img}"><span>${t.label}</span></div>`).join("");
+  const F = D.focus; // pixel position of the demo church on the map
+  Object.assign($("#focus").style, { left: F.x + "px", top: F.y + "px" });
 
-  const show = (id, at) => tl.to(id, { opacity: 1, duration: 0.5 }, at);
-  const hide = (id, at) => tl.to(id, { opacity: 0, duration: 0.5 }, at);
-  const lines = (sel, at, gap = 0.6) => tl.fromTo(`${sel} .line`, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, stagger: gap, ease: "power3.out" }, at);
+  const show = (id, at) => tl.to(id, { opacity: 1, duration: 0.4 }, at);
+  const hide = (id, at) => tl.to(id, { opacity: 0, duration: 0.4 }, at);
+  const lines = (sel, at, gap = 0.6) => tl.fromTo(`${sel} .line`, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, stagger: gap, ease: "power3.out" }, at);
   const counter = (el, to, at, dur, fmt) => { const o = { v: 0 }; tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => (el.textContent = fmt(o.v)) }, at); };
-  const T = D.t; // scene start times (seconds), matched to the voiceover
+  const T = D.t; // scene starts, fitted to the voiceover: s2 = map, s3 = demo, s4 = outro, end
 
-  // S1
+  // S1: problem
   show("#s1", 0);
-  tl.fromTo("#s1bg", { scale: 1 }, { scale: 1.08, duration: T.s2 + 0.5, ease: "none" }, 0);
-  lines("#s1", 0.3, 0.7);
-  counter($("#price"), 1.47, 0.9, 1.6, (v) => `$${v.toFixed(2)}M`);
+  tl.fromTo("#s1bg", { scale: 1 }, { scale: 1.06, duration: T.s2 + 0.5, ease: "none" }, 0);
+  lines("#s1", 0.2, 0.5);
+  counter($("#price"), 1.47, 0.5, 1.4, (v) => `$${v.toFixed(2)}M`);
+  tl.to("#land", { width: `${(360 / 535) * 100}%`, duration: 1.0, ease: "power3.out" }, 2.6);
+  tl.to("#rest", { width: `${(175 / 535) * 100}%`, duration: 0.8, ease: "power3.out" }, 3.1);
   hide("#s1", T.s2 - 0.3);
 
-  // S2
-  show("#s2", T.s2);
-  lines("#s2", T.s2 + 0.2, 0.9);
-  tl.to("#land", { width: `${(360 / 535) * 100}%`, duration: 1.2, ease: "power3.out" }, T.s2 + 2.0);
-  tl.to("#rest", { width: `${(175 / 535) * 100}%`, duration: 1.0, ease: "power3.out" }, T.s2 + 2.6);
-  hide("#s2", T.s3 - 0.3);
+  // S2: map
+  const m = T.s2, mEnd = T.s3;
+  show("#s2", m);
+  tl.fromTo("#s2bg", { scale: 1.1 }, { scale: 1, duration: 4, ease: "power2.out" }, m);
+  lines("#counter", m + 0.2, 0.3);
+  tl.to(".pin", { scale: 1, duration: 0.35, ease: "back.out(3)", stagger: { each: 2.4 / D.pins.length, from: "random" } }, m + 0.4);
+  counter($("#pinCount"), D.pins.length, m + 0.4, 2.6, (v) => Math.round(v));
+  tl.fromTo(".thumb", { opacity: 0, y: 60, rotate: -4 }, { opacity: 1, y: 0, rotate: 0, duration: 0.5, stagger: 0.3, ease: "back.out(1.6)" }, m + 3.0);
+  // the law slides in on the map
+  const lawAt = m + Math.max(5.2, (mEnd - m) * 0.42);
+  tl.to(".thumb", { opacity: 0, y: 40, duration: 0.3, stagger: 0.08 }, lawAt - 0.4);
+  tl.fromTo("#law", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, lawAt);
+  tl.to("#law .chip", { opacity: 1, duration: 0.25, stagger: 0.3 }, lawAt + 1.4);
+  // dive into one church
+  const dive = mEnd - 2.0;
+  tl.to(["#law", "#counter", "#s2 .src"], { opacity: 0, duration: 0.4 }, dive - 0.3);
+  tl.to("#focus", { opacity: 1, duration: 0.3 }, dive);
+  tl.fromTo("#focus", { scale: 2.2 }, { scale: 1, duration: 0.5, ease: "power3.out" }, dive);
+  tl.to("#mapwrap", { scale: 5, x: (960 - F.x) * 5, y: (540 - F.y) * 5, duration: 1.7, ease: "power3.in" }, dive + 0.3);
+  hide("#s2", mEnd - 0.15);
 
-  // S3
-  show("#s3", T.s3);
-  tl.fromTo("#s3bg", { scale: 1.12 }, { scale: 1, duration: T.s4 - T.s3, ease: "power1.out" }, T.s3);
-  tl.to(".pin", { scale: 1, duration: 0.35, ease: "back.out(3)", stagger: { each: 2.2 / D.pins.length, from: "random" } }, T.s3 + 0.6);
-  lines("#s3 .counter", T.s3 + 0.4, 0.4);
-  counter($("#pinCount"), D.pins.length, T.s3 + 0.6, 2.4, (v) => Math.round(v));
-  tl.fromTo(".thumb", { opacity: 0, y: 60, rotate: -4 }, { opacity: 1, y: 0, rotate: 0, duration: 0.6, stagger: 0.35, ease: "back.out(1.6)" }, T.s3 + 3.6);
-  hide("#s3", T.s4 - 0.3);
+  // S3: demo, consolidated
+  const d = T.s3;
+  show("#s3", d - 0.1);
+  const type = (el, text, at, cps = 40) => { const o = { n: 0 }; tl.to(o, { n: text.length, duration: text.length / cps, ease: "none", onUpdate: () => (el.textContent = text.slice(0, Math.round(o.n))) }, at); };
+  tl.set("#f1", { attr: { class: "field on" } }, d + 0.1);
+  type($("#t1"), "3800 S Fairview St, Santa Ana, CA", d + 0.2);
+  tl.set("#c1", { opacity: 0 }, d + 1.1); tl.set("#c2", { opacity: 1 }, d + 1.1);
+  tl.set("#f1", { attr: { class: "field" } }, d + 1.1); tl.set("#f2", { attr: { class: "field on" } }, d + 1.1);
+  type($("#t2"), "Calvary Chapel of Costa Mesa", d + 1.15);
+  tl.to("#goBtn", { y: 7, boxShadow: "0 0 0 #4233C4", duration: 0.1, yoyo: true, repeat: 1 }, d + 1.95);
+  tl.to("#form", { opacity: 0, y: -40, duration: 0.3 }, d + 2.2);
+  tl.to("#steps", { opacity: 1, duration: 0.3 }, d + 2.3);
+  tl.to("#spin", { rotate: 360 * 3, duration: 2.6, ease: "none" }, d + 2.3);
+  document.querySelectorAll(".step").forEach((el, i) => tl.set(el, { attr: { class: el.className + " done" } }, d + 2.6 + i * 0.5));
+  tl.to("#steps", { opacity: 0, duration: 0.3 }, d + 4.7);
+  tl.to("#shot", { opacity: 1, duration: 0.3 }, d + 4.8);
+  const S = D.scroll;
+  const dEnd = T.s4;
+  const stop2 = d + 7.4;
+  tl.to("#shot", { y: -S.fit, duration: 0.7, ease: "power2.inOut" }, d + 5.2);
+  const co = (id, at, out) => { tl.fromTo(id, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, at); tl.to(id, { opacity: 0, duration: 0.25 }, out); };
+  co("#co1", d + 5.8, stop2 - 0.2); co("#co2", d + 6.0, stop2 - 0.2);
+  tl.to("#shot", { y: -S.land, duration: 0.8, ease: "power2.inOut" }, stop2);
+  co("#co3", stop2 + 0.6, stop2 + 2.0);
+  tl.to("#shot", { y: -S.brief, duration: 0.9, ease: "power2.inOut" }, stop2 + 2.0);
+  co("#co4", stop2 + 2.6, dEnd - 0.3);
+  tl.to("#shot", { y: -S.brief - 380, duration: Math.max(1, dEnd - stop2 - 3.3), ease: "none" }, stop2 + 2.95);
+  hide("#s3", dEnd - 0.25);
 
-  // S4
+  // S4: outro
   show("#s4", T.s4);
-  tl.fromTo("#law", { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: "back.out(1.5)" }, T.s4 + 0.1);
-  tl.to(".chip", { opacity: 1, duration: 0.3, stagger: 0.35 }, T.s4 + 3.2);
-  hide("#s4", T.s5 - 0.3);
-
-  // S5: demo
-  show("#s5", T.s5);
-  const type = (el, text, at, cps = 28) => { const o = { n: 0 }; tl.to(o, { n: text.length, duration: text.length / cps, ease: "none", onUpdate: () => (el.textContent = text.slice(0, Math.round(o.n))) }, at); };
-  tl.set("#f1", { attr: { class: "field on" } }, T.s5 + 0.3);
-  type($("#t1"), "3800 S Fairview St, Santa Ana, CA", T.s5 + 0.5);
-  tl.set("#c1", { opacity: 0 }, T.s5 + 1.8); tl.set("#c2", { opacity: 1 }, T.s5 + 1.8);
-  tl.set("#f1", { attr: { class: "field" } }, T.s5 + 1.8); tl.set("#f2", { attr: { class: "field on" } }, T.s5 + 1.8);
-  type($("#t2"), "Calvary Chapel of Costa Mesa", T.s5 + 1.9);
-  tl.to("#goBtn", { y: 7, boxShadow: "0 0 0 #4233C4", duration: 0.12, yoyo: true, repeat: 1 }, T.s5 + 3.1);
-  tl.to("#form", { opacity: 0, y: -40, duration: 0.4 }, T.s5 + 3.4);
-  tl.to("#steps", { opacity: 1, duration: 0.4 }, T.s5 + 3.6);
-  tl.to("#spin", { rotate: 360 * 4, duration: 4.5, ease: "none" }, T.s5 + 3.6);
-  document.querySelectorAll(".step").forEach((el, i) => tl.set(el, { attr: { class: el.className + " done" } }, T.s5 + 4.0 + i * 0.65));
-  tl.add(() => {}, T.s5 + 8);
-  tl.to("#steps", { opacity: 0, duration: 0.4 }, T.s5 + 8.1);
-  tl.to("#shot", { opacity: 1, duration: 0.4 }, T.s5 + 8.3);
-  // scroll the real report card; stops line up with the callouts
-  const S = D.scroll; // pixel offsets of report sections in the 1060px-wide shot
-  const sc = (y, at, d = 0.9) => tl.to("#shot", { y: -y, duration: d, ease: "power2.inOut" }, at);
-  const co = (id, at, out) => { tl.fromTo(id, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, at); tl.to(id, { opacity: 0, duration: 0.3 }, out); };
-  co("#co1", T.s5 + 8.7, T.s5 + 10.6);
-  sc(S.fit, T.s5 + 10.6); co("#co2", T.s5 + 11.3, T.s5 + 13.2); co("#co3", T.s5 + 11.6, T.s5 + 13.2);
-  sc(S.land, T.s5 + 13.3); co("#co4", T.s5 + 14.1, T.s5 + 16.4);
-  sc(S.brief, T.s5 + 16.5); co("#co5", T.s5 + 17.2, T.s5 + 19.4);
-  sc(S.tests, T.s5 + 19.5); co("#co6", T.s5 + 20.2, T.s6 - 0.4);
-  hide("#s5", T.s6 - 0.3);
-
-  // S6
-  show("#s6", T.s6);
-  tl.to(".stat", { opacity: 1, duration: 0.5, stagger: 0.7 }, T.s6 + 0.3);
-  tl.fromTo("#listshot", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, T.s6 + 0.5);
-  tl.to("#listshot img", { y: -700, duration: 4, ease: "power1.inOut" }, T.s6 + 1.5);
-  tl.to("#end", { opacity: 1, duration: 0.6 }, T.end - 4);
+  tl.to(".stat", { opacity: 1, duration: 0.4, stagger: 0.35 }, T.s4 + 0.2);
+  const endAt = Math.max(T.s4 + 2.6, T.end - 3.2);
+  tl.to(".stat", { opacity: 0, duration: 0.3 }, endAt - 0.35);
+  tl.to("#end", { opacity: 1, duration: 0.5 }, endAt);
   tl.to({}, { duration: 0.01 }, T.end);
 
   window.DURATION = tl.duration();
   window.seek = (t) => { tl.seek(t, false); return true; };
   window.READY = true;
-  if (!navigator.webdriver) tl.play(); // open in a browser to preview in real time
+  if (!navigator.webdriver) tl.play();
 })();
 </script>
 </body>

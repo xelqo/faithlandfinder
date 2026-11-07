@@ -5,8 +5,8 @@ voice = sys.argv[1] if len(sys.argv) > 1 else "Samantha"
 rate = sys.argv[2] if len(sys.argv) > 2 else "178"
 text = open("voiceover.md").read().split("---")[0]
 blocks = [b.strip() for b in re.split(r"\*\*\[[^\]]+\]\*\*", text)[1:]]
-assert len(blocks) == 6, len(blocks)
-MIN = [6.0, 6.5, 6.5, 7.5, 24.0, 9.0]   # shortest each scene's animation can be
+assert len(blocks) == 4, len(blocks)
+MIN = [5.5, 13.0, 12.5, 5.0]   # shortest each scene's animation can be
 os.makedirs("vo", exist_ok=True)
 starts, t, files = [], 0.4, []
 for i, b in enumerate(blocks):
@@ -17,7 +17,7 @@ for i, b in enumerate(blocks):
     t = t + max(MIN[i], d + 0.6)
     print(i, round(d, 2), "s")
 end = t + 0.5
-names = ["s1", "s2", "s3", "s4", "s5", "s6"]
+names = ["s1", "s2", "s3", "s4"]
 timing = {n: round(s - 0.4, 2) for n, s in zip(names, starts) if n != "s1"}
 timing["end"] = round(end, 2)
 json.dump(timing, open("timing.json", "w"))

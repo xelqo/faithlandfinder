@@ -11,6 +11,9 @@ const sites = JSON.parse(fs.readFileSync("../public/sites.json", "utf8")).sites;
 const osm = JSON.parse(fs.readFileSync("../data/osm_worship.json", "utf8")).elements.filter((e) => e.tags?.amenity === "place_of_worship");
 const [x0, y0, x1, y1] = fs.readFileSync("assets/bbox.txt", "utf8").split(",").map(Number);
 const merc = (lon, lat) => [(lon * 20037508.34) / 180, Math.log(Math.tan(((90 + lat) * Math.PI) / 360)) * 6378137];
+const toPx = (lat, lon) => { const [x, y] = merc(lon, lat); return { x: Math.round(((x - x0) / (x1 - x0)) * 1920), y: Math.round(((y1 - y) / (y1 - y0)) * 1080) }; };
+const demo = sites.find((s) => s.name === SITE);
+const focus = toPx(demo.lat, demo.lon);
 const pins = osm.map((e) => {
   let lat = e.lat, lon = e.lon;
   if (lat == null && e.geometry) { lat = e.geometry.reduce((s, p) => s + p.lat, 0) / e.geometry.length; lon = e.geometry.reduce((s, p) => s + p.lon, 0) / e.geometry.length; }
@@ -50,5 +53,5 @@ const off = await page.evaluate(() => {
 await browser.close();
 const scroll = Object.fromEntries(Object.entries(off).map(([key, v]) => [key, Math.round(v * k)]));
 const t = JSON.parse(fs.readFileSync("timing.json", "utf8"));
-fs.writeFileSync("assets/video_data.json", JSON.stringify({ pins, thumbs, scroll, t }, null, 1));
+fs.writeFileSync("assets/video_data.json", JSON.stringify({ pins, thumbs, scroll, t, focus }, null, 1));
 console.log("pins", pins.length, "scroll", scroll, "timing", t);
