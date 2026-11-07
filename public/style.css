@@ -122,3 +122,18 @@ a { color: var(--brand); }
   .big .n { font-size: 46px; }
   .facts { grid-template-columns: 1fr; }
 }
+
+/* fit score */
+.fit-num { color: var(--brand); }
+.fit { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; }
+.ring { --p: 0; width: 120px; height: 120px; border-radius: 50%; display: grid; place-content: center; text-align: center;
+  background: radial-gradient(closest-side, var(--card) 76%, transparent 77%), conic-gradient(var(--brand) calc(var(--p) * 1%), var(--line) 0); }
+.ring b { font-size: 40px; font-weight: 900; line-height: 1; color: var(--brand); }
+.ring span { font-size: 11px; font-weight: 800; color: var(--muted); }
+.fit-parts { display: grid; gap: 8px; }
+.fp-top { display: flex; justify-content: space-between; font-size: 14px; }
+.fp-top span { color: var(--muted); font-weight: 800; }
+.fp-bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin: 3px 0 1px; }
+.fp-bar i { display: block; height: 100%; background: var(--brand); border-radius: 4px; }
+.fit-parts small { color: var(--muted); font-size: 12px; }
+@media (max-width: 480px) { .fit { grid-template-columns: 1fr; justify-items: center; } .fit-parts { width: 100%; } }

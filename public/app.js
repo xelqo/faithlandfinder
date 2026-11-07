@@ -28,7 +28,7 @@ function renderHome() {
       <div><h3>${esc(x.name)}</h3>
         <div class="sub">${esc(x.address)} · ${x.lot_acres} ac ${lead ? `· <span class="lead ${lead}">${lead} lead</span>` : ""}</div>
         <div class="dots">${x.tests.map((t) => `<i class="dot ${t.status}" title="${esc(t.name)}: ${t.status}"></i>`).join("")}</div></div>
-      <div class="homes"><b>~${x.estimate.homes}</b><span>homes</span></div></li>`;
+      <div class="homes"><b class="fit-num">${x.fit?.score ?? "–"}</b><span>fit · ~${x.estimate.homes} homes</span></div></li>`;
   }).join("");
 
   if (!map) {
@@ -66,24 +66,27 @@ function siteHTML(x) {
     <div class="site-addr">${esc(x.address)} · APN ${esc(x.apn)}</div>
     <div class="sat"><img src="${x.satellite}" alt="Satellite view with the parcel outlined in yellow" /><span class="cap">Parcel outlined in yellow · Esri World Imagery</span></div>
 
+    ${x.fit ? `<div class="block fit"><div class="ring" style="--p:${x.fit.score}"><b>${x.fit.score}</b><span>fit score</span></div>
+      <div class="fit-parts">${x.fit.parts.map((p) => `<div><div class="fp-top"><b>${esc(p.name)}</b><span>${p.pts}/${p.max}</span></div><div class="fp-bar"><i style="width:${(100 * p.pts) / p.max}%"></i></div><small>${esc(p.why)}</small></div>`).join("")}</div></div>` : ""}
+
     <div class="big"><div class="n">~${e.homes}<small>affordable homes</small></div>
       <div><span class="tag">ESTIMATE</span>${esc(e.formula)}<div class="formula">${esc(e.density_note)}. Half of the open land is an <b>assumption</b>: the rest stays parking and space for the congregation.</div></div></div>
 
-    ${c ? `<div class="block brief"><div class="who">For the congregation · written by Claude</div>
+    ${c ? `<div class="block"><h3>What the open land really is <span class="claude-badge">Claude read the image</span></h3>
+      <p>${esc(c.land.what_is_open)}</p>${landBar(c.land)}
+      ${c.land.red_flags.length ? `<p><b>Watch out:</b></p><ul>${c.land.red_flags.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>` : ""}</div>
+
+    <div class="block"><h3>Does a congregation own it? <span class="lead ${c.ownership.lead}">${c.ownership.lead} lead</span></h3>
+      <p>${esc(c.ownership.reason)}</p>
+      ${x.nonprofits?.length ? `<p class="formula">Registry matches: ${x.nonprofits.map((o) => `${esc(o.name)} (${esc(o.city)}, EIN ${o.ein})`).join("; ")}. <a href="https://projects.propublica.org/nonprofits/" target="_blank" rel="noopener">ProPublica / IRS</a></p>` : ""}</div>
+    <div class="block brief"><div class="who">For the congregation · written by Claude</div>
       <div class="headline">${esc(c.brief.headline)}</div>
       <p>${esc(c.brief.what_could_fit)}</p>
       <p><b>What you keep:</b> ${esc(c.brief.what_they_keep)}</p>
       <p><b>Still to confirm:</b></p><ul>${c.brief.unknowns.map((u) => `<li>${esc(u)}</li>`).join("")}</ul>
       <p><b>Next step:</b> ${esc(c.brief.next_step)}</p>
       <button class="btn white" id="copyBrief">Copy this brief</button></div>
-
-    <div class="block"><h3>What the open land really is <span class="claude-badge">Claude read the image</span></h3>
-      <p>${esc(c.land.what_is_open)}</p>${landBar(c.land)}
-      ${c.land.red_flags.length ? `<p><b>Watch out:</b></p><ul>${c.land.red_flags.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>` : ""}</div>
-
-    <div class="block"><h3>Does a congregation own it? <span class="lead ${c.ownership.lead}">${c.ownership.lead} lead</span></h3>
-      <p>${esc(c.ownership.reason)}</p>
-      ${x.nonprofits?.length ? `<p class="formula">Registry matches: ${x.nonprofits.map((o) => `${esc(o.name)} (${esc(o.city)}, EIN ${o.ein})`).join("; ")}. <a href="https://projects.propublica.org/nonprofits/" target="_blank" rel="noopener">ProPublica / IRS</a></p>` : ""}</div>` : `<div class="block"><p class="muted">No Claude read for this site (no API key on the server). Facts below are still live.</p></div>`}
+` : `<div class="block"><p class="muted">No Claude read for this site (no API key on the server). Facts below are still live.</p></div>`}
 
     <div class="block"><h3>SB 4 site tests</h3>${tests}${transit}</div>
 
@@ -139,7 +142,7 @@ $("#backBtn").onclick = () => go("home");
 document.addEventListener("click", (e) => { const r = e.target.closest(".row"); if (r) openSite(DATA.sites[+r.dataset.i]); });
 
 fetch("sites.json").then((r) => r.json()).then((d) => {
-  d.sites.sort((a, b) => (LEAD_ORDER[a.claude?.ownership.lead] ?? 3) - (LEAD_ORDER[b.claude?.ownership.lead] ?? 3) || b.estimate.homes - a.estimate.homes);
+  d.sites.sort((a, b) => (b.fit?.score ?? 0) - (a.fit?.score ?? 0) || b.estimate.homes - a.estimate.homes);
   DATA = d;
   renderHome();
 });
