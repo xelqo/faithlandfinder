@@ -137,3 +137,8 @@ a { color: var(--brand); }
 .fp-bar i { display: block; height: 100%; background: var(--brand); border-radius: 4px; }
 .fit-parts small { color: var(--muted); font-size: 12px; }
 @media (max-width: 480px) { .fit { grid-template-columns: 1fr; justify-items: center; } .fit-parts { width: 100%; } }
+
+.legend-map { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.lg { display: inline-block; width: 18px; height: 12px; border-radius: 3px; vertical-align: -1px; }
+.lg.ranked { background: rgba(91,75,232,.15); border: 2px solid #5B4BE8; }
+.lg.live { border: 2px dashed #221E33; }

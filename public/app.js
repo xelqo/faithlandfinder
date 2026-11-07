@@ -34,8 +34,18 @@ function renderHome() {
 
   if (!map) {
     map = L.map("map", { scrollWheelZoom: false, attributionControl: true });
-    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", { attribution: "Tiles © Esri", maxZoom: 19 }).addTo(map);
+    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", { attribution: "Tiles © Esri", maxZoom: 16 }).addTo(map);
+    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, pane: "shadowPane" }).addTo(map);
     layer = L.layerGroup().addTo(map);
+    // coverage borders: Orange County (live check works anywhere inside) and Santa Ana (the ranked list)
+    fetch("areas.geojson").then((r) => r.json()).then((g) => {
+      L.geoJSON(g, {
+        style: (f) => f.properties.role === "live"
+          ? { color: "#221E33", weight: 2, dashArray: "6 6", fill: false, opacity: 0.7 }
+          : { color: "#5B4BE8", weight: 3, fillColor: "#5B4BE8", fillOpacity: 0.08 },
+        onEachFeature: (f, l) => l.bindTooltip(f.properties.role === "live" ? "Orange County: check any address here" : "Santa Ana: every place of worship scanned", { sticky: true }),
+      }).addTo(map).bringToBack();
+    }).catch(() => {});
   }
   layer.clearLayers();
   const pts = s.map((x, i) => {
@@ -44,7 +54,7 @@ function renderHome() {
     L.marker([x.lat, x.lon], { icon }).addTo(layer).on("click", () => openSite(x));
     return [x.lat, x.lon];
   });
-  if (pts.length) map.fitBounds(pts, { padding: [24, 24] });
+  if (pts.length) map.fitBounds(pts, { padding: [36, 36] });
 }
 
 // ---------- report card ----------
