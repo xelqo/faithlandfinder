@@ -65,7 +65,8 @@ function siteHTML(x) {
   return `
     <div class="site-name">${esc(x.name || x.matched_address || "This site")}</div>
     <div class="site-addr">${esc(x.address)} · APN ${esc(x.apn)}</div>
-    <div class="sat"><img src="${x.satellite}" alt="Satellite view with the parcel outlined in yellow" /><span class="cap">Parcel outlined in yellow · Esri World Imagery</span></div>
+    ${(x.warnings || []).map((w) => `<div class="block" style="border-color:#E8A317;background:#FFF8E6"><b>⚠️ ${esc(w)}</b></div>`).join("")}
+    <div class="sat">${x.satellite ? `<img src="${x.satellite}" alt="Satellite view with the parcel outlined in yellow" />` : `<p style="color:#fff;padding:40px;text-align:center">Satellite image didn't load. Try again in a minute.</p>`}<span class="cap">Parcel outlined in yellow · Esri World Imagery</span></div>
 
     ${x.fit ? `<div class="block fit"><div class="ring" style="--p:${x.fit.score}"><b>${x.fit.score}</b><span>fit score</span></div>
       <div class="fit-parts">${x.fit.parts.map((p) => `<div><div class="fp-top"><b>${esc(p.name)}</b><span>${p.pts}/${p.max}</span></div><div class="fp-bar"><i style="width:${(100 * p.pts) / p.max}%"></i></div><small>${esc(p.why)}</small></div>`).join("")}</div></div>` : ""}
@@ -93,7 +94,7 @@ function siteHTML(x) {
 
     <div class="block"><h3>The facts</h3><div class="facts">
       <div><span>Lot size</span>${x.lot_acres} acres</div>
-      <div><span>Buildings on the lot</span>${x.buildings} (${x.built_acres} acres)</div>
+      <div><span>Buildings on the lot</span>${x.buildings == null ? "unknown (server busy)" : `${x.buildings} (${x.built_acres} acres)`}</div>
       <div><span>Zoning (city code)</span>${esc(x.zoning?.code || "unknown")}${x.zoning?.city ? ", " + esc(x.zoning.city) : ""}</div>
       <div><span>Tax mailing address</span>${esc(x.mailing_address || "not in this city's open data")}</div>
       ${x.mail_owner_hint ? `<div><span>Mailing address belongs to</span>${esc(x.mail_owner_hint)}</div>` : ""}
