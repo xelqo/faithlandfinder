@@ -29,6 +29,13 @@ congregation's facilities chair (scenario F01). Any address can be checked live 
   SB 4 site tests (fire, flood, landslide, slope, fault, ownership date), parking rule (transit), facts and sources.
 - **Live check:** type any Orange County address and the whole pipeline runs on the spot.
 
+<p>
+  <img src="docs/home.jpg" alt="Home: coverage map with Santa Ana and Orange County borders, and the ranked list of sites" width="49%" />
+  <img src="docs/report.jpg" alt="Report card for one site: parcel on satellite, fit score with breakdown, homes estimate and Claude's read of the land" width="49%" />
+</p>
+
+*Left: the ranked list and coverage map. Right: one site's report card (parcel on satellite imagery, fit score with every point explained, homes estimate, Claude's read of the land).*
+
 **Demo video:** uploaded on the hub
 **Live demo:** https://faithlandfinder.vercel.app
 
