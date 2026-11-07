@@ -17,8 +17,8 @@ const browser = await puppeteer.launch({ executablePath: "/Applications/Google C
 const page = await browser.newPage();
 await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
 await page.goto("http://localhost:4321/", { waitUntil: "networkidle0" });
-await page.waitForFunction("window.READY === true");
-await page.evaluate(async () => { await document.fonts.ready; return true; });
+for (let i = 0; i < 100 && !(await page.evaluate("window.READY === true")); i++) await new Promise((r) => setTimeout(r, 200));
+await new Promise((r) => setTimeout(r, 2500)); // let fonts and images load
 const dur = await page.evaluate("window.DURATION");
 const n = Math.ceil(dur * FPS);
 const args = ["-y", "-f", "image2pipe", "-framerate", String(FPS), "-i", "-"];

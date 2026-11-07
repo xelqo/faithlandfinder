@@ -243,16 +243,16 @@
   // S5: demo
   show("#s5", T.s5);
   const type = (el, text, at, cps = 28) => { const o = { n: 0 }; tl.to(o, { n: text.length, duration: text.length / cps, ease: "none", onUpdate: () => (el.textContent = text.slice(0, Math.round(o.n))) }, at); };
-  tl.set("#f1", { className: "field on" }, T.s5 + 0.3);
+  tl.set("#f1", { attr: { class: "field on" } }, T.s5 + 0.3);
   type($("#t1"), "3800 S Fairview St, Santa Ana, CA", T.s5 + 0.5);
   tl.set("#c1", { opacity: 0 }, T.s5 + 1.8); tl.set("#c2", { opacity: 1 }, T.s5 + 1.8);
-  tl.set("#f1", { className: "field" }, T.s5 + 1.8); tl.set("#f2", { className: "field on" }, T.s5 + 1.8);
+  tl.set("#f1", { attr: { class: "field" } }, T.s5 + 1.8); tl.set("#f2", { attr: { class: "field on" } }, T.s5 + 1.8);
   type($("#t2"), "Calvary Chapel of Costa Mesa", T.s5 + 1.9);
   tl.to("#goBtn", { y: 7, boxShadow: "0 0 0 #4233C4", duration: 0.12, yoyo: true, repeat: 1 }, T.s5 + 3.1);
   tl.to("#form", { opacity: 0, y: -40, duration: 0.4 }, T.s5 + 3.4);
   tl.to("#steps", { opacity: 1, duration: 0.4 }, T.s5 + 3.6);
   tl.to("#spin", { rotate: 360 * 4, duration: 4.5, ease: "none" }, T.s5 + 3.6);
-  tl.to(".step", { className: "+=done", duration: 0.01, stagger: 0.65 }, T.s5 + 4.0);
+  document.querySelectorAll(".step").forEach((el, i) => tl.set(el, { attr: { class: el.className + " done" } }, T.s5 + 4.0 + i * 0.65));
   tl.add(() => {}, T.s5 + 8);
   tl.to("#steps", { opacity: 0, duration: 0.4 }, T.s5 + 8.1);
   tl.to("#shot", { opacity: 1, duration: 0.4 }, T.s5 + 8.3);
@@ -276,7 +276,7 @@
   tl.to({}, { duration: 0.01 }, T.end);
 
   window.DURATION = tl.duration();
-  window.seek = (t) => tl.seek(t, false);
+  window.seek = (t) => { tl.seek(t, false); return true; };
   window.READY = true;
   if (!navigator.webdriver) tl.play(); // open in a browser to preview in real time
 })();
