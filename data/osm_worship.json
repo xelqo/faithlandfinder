@@ -1,0 +1,1649 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-07T03:15:42Z",
+    "timestamp_areas_base": "2026-11-06T22:51:45Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 358853361,
+  "lat": 33.7596949,
+  "lon": -117.8791301,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "baptist",
+    "ele": "37",
+    "gnis:feature_id": "2085087",
+    "name": "First Baptist Church of Santa Ana",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853362,
+  "lat": 33.7738889,
+  "lon": -117.8800000,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "39",
+    "gnis:feature_id": "2085088",
+    "name": "First Christian Church of Santa Ana",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853364,
+  "lat": 33.7522222,
+  "lon": -117.9336111,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "22",
+    "gnis:feature_id": "2085089",
+    "name": "Getsemani Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853369,
+  "lat": 33.7563889,
+  "lon": -117.8702778,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "seventh_day_adventist",
+    "ele": "40",
+    "gnis:feature_id": "2085093",
+    "name": "Seventh Day Adventist Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853375,
+  "lat": 33.7638889,
+  "lon": -117.9033333,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "presbyterian",
+    "ele": "31",
+    "gnis:feature_id": "2085098",
+    "name": "Wintersburg Presbyterian Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853412,
+  "lat": 33.7416667,
+  "lon": -117.8613889,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "35",
+    "gnis:feature_id": "2085172",
+    "name": "Asamblea Apostolica Sion",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853414,
+  "lat": 33.7330556,
+  "lon": -117.8702778,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "baptist",
+    "ele": "26",
+    "gnis:feature_id": "2085173",
+    "name": "Broadway Baptist Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853419,
+  "lat": 33.7347222,
+  "lon": -117.8708333,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "baptist",
+    "ele": "27",
+    "gnis:feature_id": "2085177",
+    "name": "Iglesia Bautista Vida Eterna",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853420,
+  "lat": 33.7233333,
+  "lon": -117.8669444,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "20",
+    "gnis:feature_id": "2085178",
+    "name": "Iglesia De Cristo",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853421,
+  "lat": 33.7405712,
+  "lon": -117.8725503,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "catholic",
+    "ele": "30",
+    "gnis:feature_id": "2085179",
+    "name": "Iglesia De Los Hermanos",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853422,
+  "lat": 33.7180556,
+  "lon": -117.8622222,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "19",
+    "gnis:feature_id": "2085180",
+    "name": "Neighborhood Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853424,
+  "lat": 33.7141132,
+  "lon": -117.8597019,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "17",
+    "gnis:feature_id": "2085185",
+    "name": "Our Lady of Guadalupe Delhi Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853426,
+  "lat": 33.7347222,
+  "lon": -117.8686111,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "seventh_day_adventist",
+    "ele": "28",
+    "gnis:feature_id": "2085187",
+    "name": "Seventh Day Adventist Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853427,
+  "lat": 33.7355556,
+  "lon": -117.8702778,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "28",
+    "gnis:feature_id": "2085188",
+    "name": "Trinity Cristo Rey Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853595,
+  "lat": 33.7383416,
+  "lon": -117.9393594,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "lutheran",
+    "ele": "17",
+    "gnis:feature_id": "2085241",
+    "name": "Calvary Lutheran Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853597,
+  "lat": 33.7305556,
+  "lon": -117.8783333,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "presbyterian",
+    "ele": "22",
+    "gnis:feature_id": "2085242",
+    "name": "Canaan Presbyterian Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853598,
+  "lat": 33.7472222,
+  "lon": -117.8938889,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "baptist",
+    "ele": "26",
+    "gnis:feature_id": "2085243",
+    "name": "Graceland Community Baptist Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853599,
+  "lat": 33.7333333,
+  "lon": -117.8986111,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "19",
+    "gnis:feature_id": "2085244",
+    "name": "Immaculate Heart of Mary Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853601,
+  "lat": 33.7411111,
+  "lon": -117.9291667,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "19",
+    "gnis:feature_id": "2085245",
+    "name": "New Hope Community Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853602,
+  "lat": 33.7350000,
+  "lon": -117.9283333,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "19",
+    "gnis:feature_id": "2085255",
+    "name": "Newhope Assembly of God Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853606,
+  "lat": 33.7472222,
+  "lon": -117.8813889,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "31",
+    "gnis:feature_id": "2085257",
+    "name": "Samoan Congregational Church of Christ",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853611,
+  "lat": 33.7491692,
+  "lon": -117.9383371,
+  "tags": {
+    "amenity": "place_of_worship",
+    "ele": "20",
+    "gnis:feature_id": "2085258",
+    "name": "Silver Acres Community Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 358853613,
+  "lat": 33.7463889,
+  "lon": -117.8830556,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "baptist",
+    "ele": "30",
+    "gnis:feature_id": "2085259",
+    "name": "Starlight Baptist Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 10932520584,
+  "lat": 33.7147601,
+  "lon": -117.9035787,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Sikh Center of Orange County",
+    "religion": "sikh"
+  }
+},
+{
+  "type": "node",
+  "id": 13516001832,
+  "lat": 33.7153773,
+  "lon": -117.8499274,
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "1500",
+    "addr:postcode": "92705",
+    "addr:state": "CA",
+    "addr:street": "East Warner Avenue",
+    "amenity": "place_of_worship",
+    "name": "SGI-USA Santa Ana Buddhist Center",
+    "religion": "buddhist",
+    "website": "https://www.sgi-usa.org/listings/santa-ana-center/"
+  }
+},
+{
+  "type": "way",
+  "id": 182973620,
+  "bounds": {
+    "minlat": 33.6969172,
+    "minlon": -117.9095839,
+    "maxlat": 33.6983556,
+    "maxlon": -117.9082313
+  },
+  "geometry": [
+    { "lat": 33.6976792, "lon": -117.9088093 },
+    { "lat": 33.6975713, "lon": -117.9088091 },
+    { "lat": 33.6975720, "lon": -117.9083027 },
+    { "lat": 33.6975472, "lon": -117.9083026 },
+    { "lat": 33.6975473, "lon": -117.9082316 },
+    { "lat": 33.6973875, "lon": -117.9082313 },
+    { "lat": 33.6973873, "lon": -117.9083450 },
+    { "lat": 33.6972147, "lon": -117.9083446 },
+    { "lat": 33.6972148, "lon": -117.9082316 },
+    { "lat": 33.6970594, "lon": -117.9082313 },
+    { "lat": 33.6970593, "lon": -117.9082923 },
+    { "lat": 33.6970329, "lon": -117.9082922 },
+    { "lat": 33.6970322, "lon": -117.9088093 },
+    { "lat": 33.6969173, "lon": -117.9088091 },
+    { "lat": 33.6969172, "lon": -117.9088958 },
+    { "lat": 33.6969339, "lon": -117.9088958 },
+    { "lat": 33.6969334, "lon": -117.9093070 },
+    { "lat": 33.6969780, "lon": -117.9093071 },
+    { "lat": 33.6969777, "lon": -117.9095827 },
+    { "lat": 33.6976258, "lon": -117.9095839 },
+    { "lat": 33.6976261, "lon": -117.9093210 },
+    { "lat": 33.6975486, "lon": -117.9093208 },
+    { "lat": 33.6975487, "lon": -117.9092853 },
+    { "lat": 33.6976853, "lon": -117.9092855 },
+    { "lat": 33.6976858, "lon": -117.9088989 },
+    { "lat": 33.6977042, "lon": -117.9088990 },
+    { "lat": 33.6978080, "lon": -117.9087754 },
+    { "lat": 33.6978081, "lon": -117.9087572 },
+    { "lat": 33.6980038, "lon": -117.9087582 },
+    { "lat": 33.6980039, "lon": -117.9087232 },
+    { "lat": 33.6980305, "lon": -117.9087233 },
+    { "lat": 33.6980303, "lon": -117.9087814 },
+    { "lat": 33.6981113, "lon": -117.9087818 },
+    { "lat": 33.6981111, "lon": -117.9088351 },
+    { "lat": 33.6980724, "lon": -117.9088349 },
+    { "lat": 33.6980720, "lon": -117.9089322 },
+    { "lat": 33.6981130, "lon": -117.9089324 },
+    { "lat": 33.6981129, "lon": -117.9089633 },
+    { "lat": 33.6983534, "lon": -117.9089645 },
+    { "lat": 33.6983556, "lon": -117.9083325 },
+    { "lat": 33.6980362, "lon": -117.9083309 },
+    { "lat": 33.6980360, "lon": -117.9083692 },
+    { "lat": 33.6980057, "lon": -117.9083691 },
+    { "lat": 33.6980058, "lon": -117.9083318 },
+    { "lat": 33.6977312, "lon": -117.9083304 },
+    { "lat": 33.6977310, "lon": -117.9083863 },
+    { "lat": 33.6977299, "lon": -117.9087025 },
+    { "lat": 33.6977297, "lon": -117.9087492 },
+    { "lat": 33.6976792, "lon": -117.9088093 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "church",
+    "height": "3.3",
+    "name": "Calvary Chapel of Costa Mesa",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 212499287,
+  "bounds": {
+    "minlat": 33.7426094,
+    "minlon": -117.9207511,
+    "maxlat": 33.7429722,
+    "maxlon": -117.9203294
+  },
+  "geometry": [
+    { "lat": 33.7429722, "lon": -117.9203385 },
+    { "lat": 33.7426167, "lon": -117.9203294 },
+    { "lat": 33.7426094, "lon": -117.9207420 },
+    { "lat": 33.7429649, "lon": -117.9207511 },
+    { "lat": 33.7429722, "lon": -117.9203385 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "288",
+    "addr:postcode": "92704",
+    "addr:state": "CA",
+    "addr:street": "Harbor Boulevard",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "roman_catholic",
+    "name": "Our Lady of La Vang Catholic Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 228735159,
+  "bounds": {
+    "minlat": 33.7718738,
+    "minlon": -117.8355127,
+    "maxlat": 33.7729773,
+    "maxlon": -117.8347020
+  },
+  "geometry": [
+    { "lat": 33.7729632, "lon": -117.8353976 },
+    { "lat": 33.7729639, "lon": -117.8351219 },
+    { "lat": 33.7729765, "lon": -117.8351215 },
+    { "lat": 33.7729773, "lon": -117.8350388 },
+    { "lat": 33.7728931, "lon": -117.8350377 },
+    { "lat": 33.7728932, "lon": -117.8350555 },
+    { "lat": 33.7727283, "lon": -117.8350565 },
+    { "lat": 33.7727275, "lon": -117.8349939 },
+    { "lat": 33.7726516, "lon": -117.8349929 },
+    { "lat": 33.7726519, "lon": -117.8350177 },
+    { "lat": 33.7724000, "lon": -117.8350212 },
+    { "lat": 33.7723991, "lon": -117.8351210 },
+    { "lat": 33.7722752, "lon": -117.8351226 },
+    { "lat": 33.7722758, "lon": -117.8352206 },
+    { "lat": 33.7722675, "lon": -117.8352495 },
+    { "lat": 33.7722366, "lon": -117.8352965 },
+    { "lat": 33.7721949, "lon": -117.8353290 },
+    { "lat": 33.7721466, "lon": -117.8353436 },
+    { "lat": 33.7720970, "lon": -117.8353386 },
+    { "lat": 33.7720514, "lon": -117.8353147 },
+    { "lat": 33.7720147, "lon": -117.8352744 },
+    { "lat": 33.7719907, "lon": -117.8352220 },
+    { "lat": 33.7719820, "lon": -117.8351631 },
+    { "lat": 33.7719896, "lon": -117.8351039 },
+    { "lat": 33.7720127, "lon": -117.8350509 },
+    { "lat": 33.7720487, "lon": -117.8350096 },
+    { "lat": 33.7720939, "lon": -117.8349846 },
+    { "lat": 33.7721434, "lon": -117.8349784 },
+    { "lat": 33.7721874, "lon": -117.8349849 },
+    { "lat": 33.7722418, "lon": -117.8347776 },
+    { "lat": 33.7722106, "lon": -117.8347656 },
+    { "lat": 33.7721783, "lon": -117.8347586 },
+    { "lat": 33.7721473, "lon": -117.8347569 },
+    { "lat": 33.7721501, "lon": -117.8347027 },
+    { "lat": 33.7721034, "lon": -117.8347020 },
+    { "lat": 33.7720692, "lon": -117.8347080 },
+    { "lat": 33.7720860, "lon": -117.8348433 },
+    { "lat": 33.7720664, "lon": -117.8348487 },
+    { "lat": 33.7720216, "lon": -117.8348684 },
+    { "lat": 33.7719845, "lon": -117.8348954 },
+    { "lat": 33.7719504, "lon": -117.8349310 },
+    { "lat": 33.7719206, "lon": -117.8349728 },
+    { "lat": 33.7718966, "lon": -117.8350207 },
+    { "lat": 33.7718823, "lon": -117.8350717 },
+    { "lat": 33.7718738, "lon": -117.8351250 },
+    { "lat": 33.7718741, "lon": -117.8351804 },
+    { "lat": 33.7718808, "lon": -117.8352347 },
+    { "lat": 33.7718971, "lon": -117.8352859 },
+    { "lat": 33.7719184, "lon": -117.8353340 },
+    { "lat": 33.7719484, "lon": -117.8353759 },
+    { "lat": 33.7719760, "lon": -117.8354089 },
+    { "lat": 33.7720123, "lon": -117.8354335 },
+    { "lat": 33.7720496, "lon": -117.8354526 },
+    { "lat": 33.7720876, "lon": -117.8354655 },
+    { "lat": 33.7721284, "lon": -117.8354724 },
+    { "lat": 33.7721675, "lon": -117.8354688 },
+    { "lat": 33.7722064, "lon": -117.8354597 },
+    { "lat": 33.7722444, "lon": -117.8354432 },
+    { "lat": 33.7722793, "lon": -117.8354203 },
+    { "lat": 33.7723115, "lon": -117.8353911 },
+    { "lat": 33.7723387, "lon": -117.8353572 },
+    { "lat": 33.7723625, "lon": -117.8353171 },
+    { "lat": 33.7723957, "lon": -117.8352188 },
+    { "lat": 33.7724601, "lon": -117.8352190 },
+    { "lat": 33.7724596, "lon": -117.8354020 },
+    { "lat": 33.7724553, "lon": -117.8353957 },
+    { "lat": 33.7724413, "lon": -117.8353848 },
+    { "lat": 33.7724253, "lon": -117.8353793 },
+    { "lat": 33.7724086, "lon": -117.8353797 },
+    { "lat": 33.7723928, "lon": -117.8353861 },
+    { "lat": 33.7723773, "lon": -117.8354002 },
+    { "lat": 33.7723667, "lon": -117.8354197 },
+    { "lat": 33.7723624, "lon": -117.8354425 },
+    { "lat": 33.7723647, "lon": -117.8354656 },
+    { "lat": 33.7723735, "lon": -117.8354864 },
+    { "lat": 33.7723877, "lon": -117.8355023 },
+    { "lat": 33.7724056, "lon": -117.8355115 },
+    { "lat": 33.7724249, "lon": -117.8355127 },
+    { "lat": 33.7724435, "lon": -117.8355059 },
+    { "lat": 33.7724590, "lon": -117.8354919 },
+    { "lat": 33.7724658, "lon": -117.8354816 },
+    { "lat": 33.7725018, "lon": -117.8354812 },
+    { "lat": 33.7725002, "lon": -117.8353953 },
+    { "lat": 33.7726896, "lon": -117.8353959 },
+    { "lat": 33.7726900, "lon": -117.8354292 },
+    { "lat": 33.7727685, "lon": -117.8354281 },
+    { "lat": 33.7727682, "lon": -117.8353964 },
+    { "lat": 33.7729632, "lon": -117.8353976 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "2625",
+    "addr:postcode": "92705",
+    "addr:state": "CA",
+    "addr:street": "North Tustin Avenue",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "reform",
+    "gnis:feature_id": "2085094",
+    "name": "Temple Beth Sholom",
+    "phone": "+1-714-628-4600",
+    "religion": "jewish",
+    "website": "https://www.tbsoc.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 332928236,
+  "bounds": {
+    "minlat": 33.7498220,
+    "minlon": -117.8685742,
+    "maxlat": 33.7502358,
+    "maxlon": -117.8681265
+  },
+  "geometry": [
+    { "lat": 33.7502329, "lon": -117.8685742 },
+    { "lat": 33.7502333, "lon": -117.8685150 },
+    { "lat": 33.7502358, "lon": -117.8681732 },
+    { "lat": 33.7501814, "lon": -117.8681731 },
+    { "lat": 33.7501821, "lon": -117.8681506 },
+    { "lat": 33.7501827, "lon": -117.8681292 },
+    { "lat": 33.7501254, "lon": -117.8681295 },
+    { "lat": 33.7500826, "lon": -117.8681265 },
+    { "lat": 33.7500841, "lon": -117.8681613 },
+    { "lat": 33.7500410, "lon": -117.8681630 },
+    { "lat": 33.7500407, "lon": -117.8681753 },
+    { "lat": 33.7498220, "lon": -117.8681742 },
+    { "lat": 33.7498244, "lon": -117.8685727 },
+    { "lat": 33.7502329, "lon": -117.8685742 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "600",
+    "addr:street": "North Main Street",
+    "amenity": "place_of_worship",
+    "building": "commercial",
+    "denomination": "presbyterian",
+    "ele": "38",
+    "gnis:feature_id": "2085175",
+    "name": "First Presbyterian Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 334585052,
+  "bounds": {
+    "minlat": 33.7464782,
+    "minlon": -117.8516879,
+    "maxlat": 33.7468006,
+    "maxlon": -117.8513181
+  },
+  "geometry": [
+    { "lat": 33.7467989, "lon": -117.8516214 },
+    { "lat": 33.7468006, "lon": -117.8513627 },
+    { "lat": 33.7467341, "lon": -117.8513620 },
+    { "lat": 33.7467344, "lon": -117.8513196 },
+    { "lat": 33.7465751, "lon": -117.8513181 },
+    { "lat": 33.7465750, "lon": -117.8513436 },
+    { "lat": 33.7465007, "lon": -117.8513429 },
+    { "lat": 33.7465001, "lon": -117.8514278 },
+    { "lat": 33.7464799, "lon": -117.8514276 },
+    { "lat": 33.7464782, "lon": -117.8516613 },
+    { "lat": 33.7465151, "lon": -117.8516617 },
+    { "lat": 33.7465149, "lon": -117.8516857 },
+    { "lat": 33.7467205, "lon": -117.8516879 },
+    { "lat": 33.7467726, "lon": -117.8516211 },
+    { "lat": 33.7467989, "lon": -117.8516214 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "catholic",
+    "ele": "41",
+    "name": "Our Lady of Guadalupe Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 339129575,
+  "bounds": {
+    "minlat": 33.7007475,
+    "minlon": -117.9038312,
+    "maxlat": 33.7008648,
+    "maxlon": -117.9035664
+  },
+  "geometry": [
+    { "lat": 33.7008648, "lon": -117.9038311 },
+    { "lat": 33.7008648, "lon": -117.9035664 },
+    { "lat": 33.7007475, "lon": -117.9035664 },
+    { "lat": 33.7007475, "lon": -117.9038312 },
+    { "lat": 33.7008648, "lon": -117.9038311 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "3501",
+    "addr:postcode": "92704",
+    "addr:street": "South Greenville Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "height": "4.8",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 539339498,
+  "bounds": {
+    "minlat": 33.7713493,
+    "minlon": -117.8597655,
+    "maxlat": 33.7715534,
+    "maxlon": -117.8593640
+  },
+  "geometry": [
+    { "lat": 33.7715434, "lon": -117.8597465 },
+    { "lat": 33.7714965, "lon": -117.8597410 },
+    { "lat": 33.7714965, "lon": -117.8597639 },
+    { "lat": 33.7713922, "lon": -117.8597655 },
+    { "lat": 33.7713907, "lon": -117.8597331 },
+    { "lat": 33.7713493, "lon": -117.8597324 },
+    { "lat": 33.7713497, "lon": -117.8596731 },
+    { "lat": 33.7713716, "lon": -117.8596805 },
+    { "lat": 33.7713736, "lon": -117.8593640 },
+    { "lat": 33.7715534, "lon": -117.8593738 },
+    { "lat": 33.7715520, "lon": -117.8594819 },
+    { "lat": 33.7715206, "lon": -117.8594816 },
+    { "lat": 33.7715176, "lon": -117.8596695 },
+    { "lat": 33.7715434, "lon": -117.8596726 },
+    { "lat": 33.7715434, "lon": -117.8597465 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "2555",
+    "addr:postcode": "92706",
+    "addr:state": "CA",
+    "addr:street": "Santiago Street",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "denomination": "protestant",
+    "ele": "51",
+    "gnis:feature_id": "2085092",
+    "name": "Santa Ana Congregational Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 539339499,
+  "bounds": {
+    "minlat": 33.7711551,
+    "minlon": -117.8592728,
+    "maxlat": 33.7715218,
+    "maxlon": -117.8589359
+  },
+  "geometry": [
+    { "lat": 33.7715200, "lon": -117.8592728 },
+    { "lat": 33.7711551, "lon": -117.8592619 },
+    { "lat": 33.7711605, "lon": -117.8589359 },
+    { "lat": 33.7715218, "lon": -117.8589468 },
+    { "lat": 33.7715200, "lon": -117.8592728 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "church",
+    "denomination": "protestant",
+    "name": "Neidringhouse Hall",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 539339500,
+  "bounds": {
+    "minlat": 33.7712969,
+    "minlon": -117.8588880,
+    "maxlat": 33.7714766,
+    "maxlon": -117.8586090
+  },
+  "geometry": [
+    { "lat": 33.7714766, "lon": -117.8586155 },
+    { "lat": 33.7713023, "lon": -117.8586090 },
+    { "lat": 33.7712969, "lon": -117.8588782 },
+    { "lat": 33.7714713, "lon": -117.8588880 },
+    { "lat": 33.7714766, "lon": -117.8586155 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Santa Ana Congregational Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 631999698,
+  "bounds": {
+    "minlat": 33.7030778,
+    "minlon": -117.8967723,
+    "maxlat": 33.7032838,
+    "maxlon": -117.8965603
+  },
+  "geometry": [
+    { "lat": 33.7032830, "lon": -117.8967723 },
+    { "lat": 33.7032838, "lon": -117.8965616 },
+    { "lat": 33.7030786, "lon": -117.8965603 },
+    { "lat": 33.7030778, "lon": -117.8967710 },
+    { "lat": 33.7032830, "lon": -117.8967723 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "2000",
+    "addr:postcode": "92704",
+    "addr:state": "CA",
+    "addr:street": "West Alton Avenue",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "name": "Christ Our Savior Catholic Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 647096361,
+  "bounds": {
+    "minlat": 33.7714965,
+    "minlon": -117.8356029,
+    "maxlat": 33.7731682,
+    "maxlon": -117.8344647
+  },
+  "geometry": [
+    { "lat": 33.7731657, "lon": -117.8344647 },
+    { "lat": 33.7731682, "lon": -117.8355249 },
+    { "lat": 33.7731611, "lon": -117.8355541 },
+    { "lat": 33.7731433, "lon": -117.8355829 },
+    { "lat": 33.7731238, "lon": -117.8355980 },
+    { "lat": 33.7714965, "lon": -117.8356029 },
+    { "lat": 33.7714970, "lon": -117.8344650 },
+    { "lat": 33.7731657, "lon": -117.8344647 }
+  ],
+  "tags": {
+    "landuse": "religious",
+    "religion": "jewish"
+  }
+},
+{
+  "type": "way",
+  "id": 741102290,
+  "bounds": {
+    "minlat": 33.7193689,
+    "minlon": -117.9096499,
+    "maxlat": 33.7201230,
+    "maxlon": -117.9088632
+  },
+  "geometry": [
+    { "lat": 33.7201224, "lon": -117.9096499 },
+    { "lat": 33.7193740, "lon": -117.9096431 },
+    { "lat": 33.7193689, "lon": -117.9091063 },
+    { "lat": 33.7195307, "lon": -117.9090212 },
+    { "lat": 33.7197355, "lon": -117.9089513 },
+    { "lat": 33.7199902, "lon": -117.9088892 },
+    { "lat": 33.7201230, "lon": -117.9088632 },
+    { "lat": 33.7201224, "lon": -117.9096499 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Nguyen At V",
+    "religion": "buddhist"
+  }
+},
+{
+  "type": "way",
+  "id": 766573045,
+  "bounds": {
+    "minlat": 33.7374724,
+    "minlon": -117.9024072,
+    "maxlat": 33.7376250,
+    "maxlon": -117.9020702
+  },
+  "geometry": [
+    { "lat": 33.7376073, "lon": -117.9023877 },
+    { "lat": 33.7375824, "lon": -117.9023873 },
+    { "lat": 33.7375823, "lon": -117.9024072 },
+    { "lat": 33.7375031, "lon": -117.9024061 },
+    { "lat": 33.7375033, "lon": -117.9023898 },
+    { "lat": 33.7374833, "lon": -117.9023896 },
+    { "lat": 33.7374856, "lon": -117.9021468 },
+    { "lat": 33.7374724, "lon": -117.9021466 },
+    { "lat": 33.7374730, "lon": -117.9020814 },
+    { "lat": 33.7375238, "lon": -117.9020821 },
+    { "lat": 33.7375239, "lon": -117.9020702 },
+    { "lat": 33.7375667, "lon": -117.9020708 },
+    { "lat": 33.7375666, "lon": -117.9020844 },
+    { "lat": 33.7376250, "lon": -117.9020852 },
+    { "lat": 33.7376241, "lon": -117.9021718 },
+    { "lat": 33.7376094, "lon": -117.9021716 },
+    { "lat": 33.7376073, "lon": -117.9023877 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "church",
+    "denomination": "baptist",
+    "name": "New Spirit Baptist Church",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 766573656,
+  "bounds": {
+    "minlat": 33.7457838,
+    "minlon": -117.8856167,
+    "maxlat": 33.7460484,
+    "maxlon": -117.8854462
+  },
+  "geometry": [
+    { "lat": 33.7460135, "lon": -117.8856167 },
+    { "lat": 33.7457838, "lon": -117.8856125 },
+    { "lat": 33.7457859, "lon": -117.8854462 },
+    { "lat": 33.7460484, "lon": -117.8854510 },
+    { "lat": 33.7460480, "lon": -117.8854866 },
+    { "lat": 33.7460151, "lon": -117.8854860 },
+    { "lat": 33.7460135, "lon": -117.8856167 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "chapel",
+    "denomination": "african_methodist_episcopal",
+    "name": "Johnson Chapel",
+    "name:en": "Johnson Chapel",
+    "name:es": "Iglesia Cristiana Rios de Agua Viva",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 766574528,
+  "bounds": {
+    "minlat": 33.7458736,
+    "minlon": -117.9314048,
+    "maxlat": 33.7460051,
+    "maxlon": -117.9313363
+  },
+  "geometry": [
+    { "lat": 33.7460046, "lon": -117.9314048 },
+    { "lat": 33.7458736, "lon": -117.9314034 },
+    { "lat": 33.7458740, "lon": -117.9313363 },
+    { "lat": 33.7460051, "lon": -117.9313377 },
+    { "lat": 33.7460046, "lon": -117.9314048 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Chùa Bát Nhã",
+    "name:en": "Bat Nha Buddhist Temple",
+    "name:vi": "Chùa Bát Nhã",
+    "religion": "buddhist"
+  }
+},
+{
+  "type": "way",
+  "id": 815818266,
+  "bounds": {
+    "minlat": 33.7580781,
+    "minlon": -117.8524587,
+    "maxlat": 33.7582298,
+    "maxlon": -117.8521567
+  },
+  "geometry": [
+    { "lat": 33.7580781, "lon": -117.8521567 },
+    { "lat": 33.7580801, "lon": -117.8524587 },
+    { "lat": 33.7582091, "lon": -117.8524584 },
+    { "lat": 33.7582092, "lon": -117.8524364 },
+    { "lat": 33.7582298, "lon": -117.8524368 },
+    { "lat": 33.7582296, "lon": -117.8523793 },
+    { "lat": 33.7582100, "lon": -117.8523769 },
+    { "lat": 33.7582075, "lon": -117.8521590 },
+    { "lat": 33.7580781, "lon": -117.8521567 }
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Kingdom Hall Of Jehovah’s Witnesses",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 1095260721,
+  "bounds": {
+    "minlat": 33.7356041,
+    "minlon": -117.9371516,
+    "maxlat": 33.7360095,
+    "maxlon": -117.9366435
+  },
+  "geometry": [
+    { "lat": 33.7359948, "lon": -117.9366450 },
+    { "lat": 33.7356046, "lon": -117.9366435 },
+    { "lat": 33.7356041, "lon": -117.9368275 },
+    { "lat": 33.7356563, "lon": -117.9368277 },
+    { "lat": 33.7356562, "lon": -117.9368425 },
+    { "lat": 33.7356618, "lon": -117.9368425 },
+    { "lat": 33.7356611, "lon": -117.9371112 },
+    { "lat": 33.7357168, "lon": -117.9371114 },
+    { "lat": 33.7357167, "lon": -117.9371510 },
+    { "lat": 33.7358992, "lon": -117.9371516 },
+    { "lat": 33.7358993, "lon": -117.9371121 },
+    { "lat": 33.7359538, "lon": -117.9371123 },
+    { "lat": 33.7359544, "lon": -117.9368807 },
+    { "lat": 33.7360093, "lon": -117.9368809 },
+    { "lat": 33.7360095, "lon": -117.9367948 },
+    { "lat": 33.7359944, "lon": -117.9367948 },
+    { "lat": 33.7359948, "lon": -117.9366450 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "901",
+    "addr:postcode": "92704",
+    "addr:state": "CA",
+    "addr:street": "South Euclid Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "baptist",
+    "ele": "17",
+    "gnis:feature_id": "2085239",
+    "height": "9.78",
+    "name": "Bethel Baptist Church",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1099444870,
+  "bounds": {
+    "minlat": 33.7383348,
+    "minlon": -117.9385748,
+    "maxlat": 33.7384896,
+    "maxlon": -117.9382668
+  },
+  "geometry": [
+    { "lat": 33.7384745, "lon": -117.9385672 },
+    { "lat": 33.7384740, "lon": -117.9385129 },
+    { "lat": 33.7384829, "lon": -117.9385127 },
+    { "lat": 33.7384825, "lon": -117.9384572 },
+    { "lat": 33.7384896, "lon": -117.9384571 },
+    { "lat": 33.7384890, "lon": -117.9383898 },
+    { "lat": 33.7384835, "lon": -117.9383898 },
+    { "lat": 33.7384830, "lon": -117.9383364 },
+    { "lat": 33.7384756, "lon": -117.9383365 },
+    { "lat": 33.7384751, "lon": -117.9382773 },
+    { "lat": 33.7384413, "lon": -117.9382777 },
+    { "lat": 33.7384412, "lon": -117.9382668 },
+    { "lat": 33.7383842, "lon": -117.9382675 },
+    { "lat": 33.7383843, "lon": -117.9382784 },
+    { "lat": 33.7383441, "lon": -117.9382788 },
+    { "lat": 33.7383446, "lon": -117.9383364 },
+    { "lat": 33.7383348, "lon": -117.9383365 },
+    { "lat": 33.7383362, "lon": -117.9385113 },
+    { "lat": 33.7383423, "lon": -117.9385112 },
+    { "lat": 33.7383428, "lon": -117.9385688 },
+    { "lat": 33.7383806, "lon": -117.9385684 },
+    { "lat": 33.7383807, "lon": -117.9385748 },
+    { "lat": 33.7384380, "lon": -117.9385741 },
+    { "lat": 33.7384379, "lon": -117.9385677 },
+    { "lat": 33.7384745, "lon": -117.9385672 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "5315",
+    "addr:postcode": "92704",
+    "addr:state": "CA",
+    "addr:street": "McFadden Avenue",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "armenian_apostolic",
+    "height": "18.17",
+    "name": "Forty Martyrs Armenian Apostolic Church",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1101774363,
+  "bounds": {
+    "minlat": 33.7290678,
+    "minlon": -117.8684922,
+    "maxlat": 33.7292655,
+    "maxlon": -117.8679323
+  },
+  "geometry": [
+    { "lat": 33.7292640, "lon": -117.8680235 },
+    { "lat": 33.7292158, "lon": -117.8680238 },
+    { "lat": 33.7292156, "lon": -117.8679673 },
+    { "lat": 33.7291948, "lon": -117.8679674 },
+    { "lat": 33.7291946, "lon": -117.8679323 },
+    { "lat": 33.7291215, "lon": -117.8679328 },
+    { "lat": 33.7291216, "lon": -117.8679589 },
+    { "lat": 33.7290678, "lon": -117.8679592 },
+    { "lat": 33.7290681, "lon": -117.8680277 },
+    { "lat": 33.7290947, "lon": -117.8680276 },
+    { "lat": 33.7290953, "lon": -117.8681705 },
+    { "lat": 33.7290802, "lon": -117.8681706 },
+    { "lat": 33.7290809, "lon": -117.8683293 },
+    { "lat": 33.7290704, "lon": -117.8683294 },
+    { "lat": 33.7290709, "lon": -117.8684378 },
+    { "lat": 33.7290847, "lon": -117.8684377 },
+    { "lat": 33.7290848, "lon": -117.8684506 },
+    { "lat": 33.7291095, "lon": -117.8684505 },
+    { "lat": 33.7291097, "lon": -117.8684922 },
+    { "lat": 33.7291336, "lon": -117.8684921 },
+    { "lat": 33.7291334, "lon": -117.8684522 },
+    { "lat": 33.7292393, "lon": -117.8684515 },
+    { "lat": 33.7292392, "lon": -117.8684347 },
+    { "lat": 33.7292608, "lon": -117.8684346 },
+    { "lat": 33.7292606, "lon": -117.8683798 },
+    { "lat": 33.7292655, "lon": -117.8683798 },
+    { "lat": 33.7292640, "lon": -117.8680235 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "1344",
+    "addr:postcode": "92707",
+    "addr:state": "CA",
+    "addr:street": "South Main Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "ele": "24",
+    "gnis:feature_id": "2085186",
+    "height": "9.7",
+    "name": "Saint Anne's Church",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1118925884,
+  "bounds": {
+    "minlat": 33.7210187,
+    "minlon": -117.8771638,
+    "maxlat": 33.7215431,
+    "maxlon": -117.8767760
+  },
+  "geometry": [
+    { "lat": 33.7215232, "lon": -117.8771140 },
+    { "lat": 33.7215235, "lon": -117.8770113 },
+    { "lat": 33.7215297, "lon": -117.8770008 },
+    { "lat": 33.7215231, "lon": -117.8769882 },
+    { "lat": 33.7215070, "lon": -117.8769883 },
+    { "lat": 33.7215069, "lon": -117.8768378 },
+    { "lat": 33.7215209, "lon": -117.8768378 },
+    { "lat": 33.7215431, "lon": -117.8768104 },
+    { "lat": 33.7215209, "lon": -117.8767760 },
+    { "lat": 33.7213345, "lon": -117.8767763 },
+    { "lat": 33.7213345, "lon": -117.8768047 },
+    { "lat": 33.7212999, "lon": -117.8768047 },
+    { "lat": 33.7213000, "lon": -117.8769343 },
+    { "lat": 33.7211462, "lon": -117.8769346 },
+    { "lat": 33.7211461, "lon": -117.8768260 },
+    { "lat": 33.7210187, "lon": -117.8768262 },
+    { "lat": 33.7210190, "lon": -117.8770313 },
+    { "lat": 33.7210656, "lon": -117.8770312 },
+    { "lat": 33.7210657, "lon": -117.8770690 },
+    { "lat": 33.7210774, "lon": -117.8770690 },
+    { "lat": 33.7210774, "lon": -117.8771037 },
+    { "lat": 33.7210212, "lon": -117.8771038 },
+    { "lat": 33.7210212, "lon": -117.8771638 },
+    { "lat": 33.7211439, "lon": -117.8771636 },
+    { "lat": 33.7211438, "lon": -117.8770766 },
+    { "lat": 33.7211686, "lon": -117.8770766 },
+    { "lat": 33.7211686, "lon": -117.8770620 },
+    { "lat": 33.7213523, "lon": -117.8770617 },
+    { "lat": 33.7213523, "lon": -117.8770797 },
+    { "lat": 33.7213646, "lon": -117.8770797 },
+    { "lat": 33.7213646, "lon": -117.8771143 },
+    { "lat": 33.7215232, "lon": -117.8771140 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "2030",
+    "addr:postcode": "92707",
+    "addr:state": "CA",
+    "addr:street": "South Flower Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "methodist",
+    "ele": "17",
+    "gnis:feature_id": "2085240",
+    "height": "7.1",
+    "name": "Brown Temple Christian Methodist Episcopal Church",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1119896805,
+  "bounds": {
+    "minlat": 33.7584435,
+    "minlon": -117.9342058,
+    "maxlat": 33.7585982,
+    "maxlon": -117.9339343
+  },
+  "geometry": [
+    { "lat": 33.7584753, "lon": -117.9339343 },
+    { "lat": 33.7584743, "lon": -117.9340926 },
+    { "lat": 33.7584442, "lon": -117.9340923 },
+    { "lat": 33.7584435, "lon": -117.9342044 },
+    { "lat": 33.7585965, "lon": -117.9342058 },
+    { "lat": 33.7585982, "lon": -117.9339354 },
+    { "lat": 33.7584753, "lon": -117.9339343 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "1521",
+    "addr:postcode": "92703",
+    "addr:state": "CA",
+    "addr:street": "La Bonita Avenue",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "jehovahs_witness",
+    "height": "4.19",
+    "name": "Kingdom Hall of Jehovah's Witnesses",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1135799184,
+  "bounds": {
+    "minlat": 33.7375311,
+    "minlon": -117.9380092,
+    "maxlat": 33.7379542,
+    "maxlon": -117.9376016
+  },
+  "geometry": [
+    { "lat": 33.7376869, "lon": -117.9379391 },
+    { "lat": 33.7379006, "lon": -117.9379463 },
+    { "lat": 33.7379017, "lon": -117.9378982 },
+    { "lat": 33.7379502, "lon": -117.9378998 },
+    { "lat": 33.7379542, "lon": -117.9377265 },
+    { "lat": 33.7379053, "lon": -117.9377248 },
+    { "lat": 33.7379061, "lon": -117.9376909 },
+    { "lat": 33.7376926, "lon": -117.9376838 },
+    { "lat": 33.7376944, "lon": -117.9376052 },
+    { "lat": 33.7375865, "lon": -117.9376016 },
+    { "lat": 33.7375846, "lon": -117.9376848 },
+    { "lat": 33.7375367, "lon": -117.9376832 },
+    { "lat": 33.7375311, "lon": -117.9379242 },
+    { "lat": 33.7375796, "lon": -117.9379258 },
+    { "lat": 33.7375777, "lon": -117.9380056 },
+    { "lat": 33.7376853, "lon": -117.9380092 },
+    { "lat": 33.7376869, "lon": -117.9379391 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "730",
+    "addr:postcode": "92704",
+    "addr:state": "CA",
+    "addr:street": "Euclid Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "catholic",
+    "ele": "17",
+    "gnis:feature_id": "2085256",
+    "height": "10.43",
+    "name": "Saint Barbara's Catholic Church",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1147080146,
+  "bounds": {
+    "minlat": 33.7203744,
+    "minlon": -117.9075289,
+    "maxlat": 33.7205621,
+    "maxlon": -117.9073323
+  },
+  "geometry": [
+    { "lat": 33.7205621, "lon": -117.9073328 },
+    { "lat": 33.7203748, "lon": -117.9073323 },
+    { "lat": 33.7203744, "lon": -117.9075287 },
+    { "lat": 33.7204500, "lon": -117.9075289 },
+    { "lat": 33.7204500, "lon": -117.9075139 },
+    { "lat": 33.7205618, "lon": -117.9075142 },
+    { "lat": 33.7205621, "lon": -117.9073328 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "2813",
+    "addr:postcode": "92704",
+    "addr:state": "CA",
+    "addr:street": "West Harvard Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "jehovahs_witness",
+    "height": "4.9",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1148015940,
+  "bounds": {
+    "minlat": 33.7204056,
+    "minlon": -117.9082984,
+    "maxlat": 33.7206039,
+    "maxlon": -117.9081251
+  },
+  "geometry": [
+    { "lat": 33.7206033, "lon": -117.9081262 },
+    { "lat": 33.7204695, "lon": -117.9081269 },
+    { "lat": 33.7204695, "lon": -117.9081379 },
+    { "lat": 33.7204471, "lon": -117.9081381 },
+    { "lat": 33.7204470, "lon": -117.9081251 },
+    { "lat": 33.7204056, "lon": -117.9081254 },
+    { "lat": 33.7204060, "lon": -117.9082278 },
+    { "lat": 33.7204273, "lon": -117.9082276 },
+    { "lat": 33.7204275, "lon": -117.9082786 },
+    { "lat": 33.7204720, "lon": -117.9082784 },
+    { "lat": 33.7204721, "lon": -117.9082984 },
+    { "lat": 33.7206039, "lon": -117.9082977 },
+    { "lat": 33.7206033, "lon": -117.9081262 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "2007",
+    "addr:postcode": "92704",
+    "addr:state": "CA",
+    "addr:street": "South Fairview Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "jehovahs_witness",
+    "height": "4.9",
+    "religion": "christian",
+    "source": "esri/Orange_County_CA_Buildings_v3"
+  }
+},
+{
+  "type": "way",
+  "id": 1154158386,
+  "bounds": {
+    "minlat": 33.7584231,
+    "minlon": -117.9342877,
+    "maxlat": 33.7587667,
+    "maxlon": -117.9333042
+  },
+  "geometry": [
+    { "lat": 33.7587667, "lon": -117.9342874 },
+    { "lat": 33.7584236, "lon": -117.9342877 },
+    { "lat": 33.7584231, "lon": -117.9333045 },
+    { "lat": 33.7587661, "lon": -117.9333042 },
+    { "lat": 33.7587667, "lon": -117.9342874 }
+  ],
+  "tags": {
+    "denomination": "jehovahs_witness",
+    "landuse": "religious",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 1154159516,
+  "bounds": {
+    "minlat": 33.7203096,
+    "minlon": -117.9083617,
+    "maxlat": 33.7207289,
+    "maxlon": -117.9071778
+  },
+  "geometry": [
+    { "lat": 33.7207267, "lon": -117.9083473 },
+    { "lat": 33.7206581, "lon": -117.9083527 },
+    { "lat": 33.7203655, "lon": -117.9083617 },
+    { "lat": 33.7203456, "lon": -117.9083512 },
+    { "lat": 33.7203214, "lon": -117.9083238 },
+    { "lat": 33.7203141, "lon": -117.9082847 },
+    { "lat": 33.7203136, "lon": -117.9082391 },
+    { "lat": 33.7203096, "lon": -117.9071839 },
+    { "lat": 33.7207289, "lon": -117.9071778 },
+    { "lat": 33.7207267, "lon": -117.9083473 }
+  ],
+  "tags": {
+    "landuse": "religious"
+  }
+},
+{
+  "type": "way",
+  "id": 1176707297,
+  "bounds": {
+    "minlat": 33.7145607,
+    "minlon": -117.9040642,
+    "maxlat": 33.7151818,
+    "maxlon": -117.9030007
+  },
+  "geometry": [
+    { "lat": 33.7151818, "lon": -117.9030069 },
+    { "lat": 33.7151614, "lon": -117.9039990 },
+    { "lat": 33.7151057, "lon": -117.9040642 },
+    { "lat": 33.7145607, "lon": -117.9040525 },
+    { "lat": 33.7145815, "lon": -117.9030007 },
+    { "lat": 33.7151818, "lon": -117.9030069 }
+  ],
+  "tags": {
+    "landuse": "religious",
+    "religion": "sikh"
+  }
+},
+{
+  "type": "way",
+  "id": 1442751224,
+  "bounds": {
+    "minlat": 33.7485351,
+    "minlon": -117.8685758,
+    "maxlat": 33.7488063,
+    "maxlon": -117.8682021
+  },
+  "geometry": [
+    { "lat": 33.7485351, "lon": -117.8685737 },
+    { "lat": 33.7488063, "lon": -117.8685758 },
+    { "lat": 33.7488055, "lon": -117.8682054 },
+    { "lat": 33.7485359, "lon": -117.8682021 },
+    { "lat": 33.7485351, "lon": -117.8685737 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "120",
+    "addr:postcode": "92701",
+    "addr:state": "CA",
+    "addr:street": "West 5th Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "nondenominational",
+    "name": "Mariners Church",
+    "religion": "christian",
+    "service_times:en": "Su 10:00, 11:30, 13:00",
+    "service_times:es": "Su 14:30",
+    "website": "https://www.marinerschurch.org/santa-ana/",
+    "wikidata": "Q6764379",
+    "wikipedia": "en:Mariners Church"
+  }
+},
+{
+  "type": "way",
+  "id": 1537801663,
+  "bounds": {
+    "minlat": 33.7382182,
+    "minlon": -117.9395821,
+    "maxlat": 33.7390231,
+    "maxlon": -117.9388381
+  },
+  "geometry": [
+    { "lat": 33.7390231, "lon": -117.9388508 },
+    { "lat": 33.7382350, "lon": -117.9388381 },
+    { "lat": 33.7382182, "lon": -117.9395708 },
+    { "lat": 33.7390012, "lon": -117.9395821 },
+    { "lat": 33.7390231, "lon": -117.9388508 }
+  ],
+  "tags": {
+    "landuse": "religious"
+  }
+},
+{
+  "type": "way",
+  "id": 1537801664,
+  "bounds": {
+    "minlat": 33.7382350,
+    "minlon": -117.9395879,
+    "maxlat": 33.7392310,
+    "maxlon": -117.9375808
+  },
+  "geometry": [
+    { "lat": 33.7390660, "lon": -117.9375808 },
+    { "lat": 33.7390584, "lon": -117.9378558 },
+    { "lat": 33.7385980, "lon": -117.9378450 },
+    { "lat": 33.7385897, "lon": -117.9381181 },
+    { "lat": 33.7382549, "lon": -117.9381106 },
+    { "lat": 33.7382350, "lon": -117.9388381 },
+    { "lat": 33.7390231, "lon": -117.9388508 },
+    { "lat": 33.7390012, "lon": -117.9395821 },
+    { "lat": 33.7391801, "lon": -117.9395879 },
+    { "lat": 33.7392310, "lon": -117.9375846 },
+    { "lat": 33.7390660, "lon": -117.9375808 }
+  ],
+  "tags": {
+    "landuse": "religious"
+  }
+},
+{
+  "type": "way",
+  "id": 1561465935,
+  "bounds": {
+    "minlat": 33.7528957,
+    "minlon": -117.8364073,
+    "maxlat": 33.7554078,
+    "maxlon": -117.8343845
+  },
+  "geometry": [
+    { "lat": 33.7528996, "lon": -117.8363825 },
+    { "lat": 33.7554078, "lon": -117.8364073 },
+    { "lat": 33.7553066, "lon": -117.8362923 },
+    { "lat": 33.7552492, "lon": -117.8362007 },
+    { "lat": 33.7551878, "lon": -117.8360628 },
+    { "lat": 33.7551533, "lon": -117.8359392 },
+    { "lat": 33.7551326, "lon": -117.8357602 },
+    { "lat": 33.7551317, "lon": -117.8354942 },
+    { "lat": 33.7551312, "lon": -117.8348421 },
+    { "lat": 33.7545806, "lon": -117.8348660 },
+    { "lat": 33.7545845, "lon": -117.8344000 },
+    { "lat": 33.7529611, "lon": -117.8343845 },
+    { "lat": 33.7529258, "lon": -117.8344017 },
+    { "lat": 33.7529054, "lon": -117.8344290 },
+    { "lat": 33.7528957, "lon": -117.8344730 },
+    { "lat": 33.7528996, "lon": -117.8363825 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "1010",
+    "addr:postcode": "92705",
+    "addr:state": "CA",
+    "addr:street": "North Tustin Avenue",
+    "amenity": "place_of_worship",
+    "denomination": "nondenominational",
+    "name": "Calvary Church of Santa Ana",
+    "religion": "christian",
+    "service_times": "Su 09:00,11:00",
+    "service_times:ase": "Su 09:00",
+    "service_times:en": "Su 09:00, 11:00",
+    "service_times:es": "Su 11:00",
+    "website": "https://calvarylife.org",
+    "wikidata": "Q5024172",
+    "wikipedia": "en:Calvary Church of Santa Ana"
+  }
+},
+{
+  "type": "way",
+  "id": 1564276785,
+  "bounds": {
+    "minlat": 33.7506553,
+    "minlon": -117.9287440,
+    "maxlat": 33.7515770,
+    "maxlon": -117.9277901
+  },
+  "geometry": [
+    { "lat": 33.7515663, "lon": -117.9287440 },
+    { "lat": 33.7515770, "lon": -117.9278052 },
+    { "lat": 33.7506660, "lon": -117.9277901 },
+    { "lat": 33.7506553, "lon": -117.9287290 },
+    { "lat": 33.7515663, "lon": -117.9287440 }
+  ],
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "713",
+    "addr:postcode": "92703",
+    "addr:state": "CA",
+    "addr:street": "North Newhope Street",
+    "alt_name": "Giáo Hội Phật Giáo Việt Nam Trên Thế Giới",
+    "alt_name:vi": "Giáo Hội Phật Giáo Việt Nam Trên Thế Giới",
+    "amenity": "place_of_worship",
+    "contact:facebook": "https://www.facebook.com/chuabaoquang.littlesaigon/",
+    "landuse": "religious",
+    "name": "Chùa Bảo Quang",
+    "name:en": "Bao Quang Temple",
+    "name:vi": "Chùa Bảo Quang",
+    "religion": "buddhist"
+  }
+},
+{
+  "type": "way",
+  "id": 1574351041,
+  "bounds": {
+    "minlat": 33.7644754,
+    "minlon": -117.8538221,
+    "maxlat": 33.7656726,
+    "maxlon": -117.8516386
+  },
+  "geometry": [
+    { "lat": 33.7644754, "lon": -117.8517089 },
+    { "lat": 33.7644875, "lon": -117.8538221 },
+    { "lat": 33.7653923, "lon": -117.8538173 },
+    { "lat": 33.7653799, "lon": -117.8527205 },
+    { "lat": 33.7656726, "lon": -117.8527204 },
+    { "lat": 33.7656726, "lon": -117.8516386 },
+    { "lat": 33.7646796, "lon": -117.8516492 },
+    { "lat": 33.7644754, "lon": -117.8517089 }
+  ],
+  "tags": {
+    "landuse": "religious"
+  }
+},
+{
+  "type": "way",
+  "id": 1574351043,
+  "bounds": {
+    "minlat": 33.7644300,
+    "minlon": -117.8514530,
+    "maxlat": 33.7654136,
+    "maxlon": -117.8494419
+  },
+  "geometry": [
+    { "lat": 33.7654027, "lon": -117.8494419 },
+    { "lat": 33.7654136, "lon": -117.8514179 },
+    { "lat": 33.7644377, "lon": -117.8514530 },
+    { "lat": 33.7644344, "lon": -117.8511093 },
+    { "lat": 33.7644315, "lon": -117.8502656 },
+    { "lat": 33.7644300, "lon": -117.8494450 },
+    { "lat": 33.7654027, "lon": -117.8494419 }
+  ],
+  "tags": {
+    "landuse": "religious"
+  }
+},
+{
+  "type": "way",
+  "id": 1574351047,
+  "bounds": {
+    "minlat": 33.7660921,
+    "minlon": -117.8494446,
+    "maxlat": 33.7671089,
+    "maxlon": -117.8473076
+  },
+  "geometry": [
+    { "lat": 33.7661567, "lon": -117.8473186 },
+    { "lat": 33.7661619, "lon": -117.8477731 },
+    { "lat": 33.7660925, "lon": -117.8479657 },
+    { "lat": 33.7660921, "lon": -117.8494446 },
+    { "lat": 33.7671089, "lon": -117.8494396 },
+    { "lat": 33.7671007, "lon": -117.8473076 },
+    { "lat": 33.7661567, "lon": -117.8473186 }
+  ],
+  "tags": {
+    "landuse": "religious"
+  }
+},
+{
+  "type": "relation",
+  "id": 13886346,
+  "bounds": {
+    "minlat": 33.7645013,
+    "minlon": -117.8513233,
+    "maxlat": 33.7650882,
+    "maxlon": -117.8505170
+  },
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "2121",
+    "addr:postcode": "92705",
+    "addr:state": "CA",
+    "addr:street": "North Grand Avenue",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "methodist",
+    "ele": "53",
+    "gnis:feature_id": "2104777",
+    "height": "9.75",
+    "name": "Grand Avenue United Methodist Church",
+    "religion": "christian",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 14238890,
+  "bounds": {
+    "minlat": 33.7579723,
+    "minlon": -117.8754247,
+    "maxlat": 33.7584443,
+    "maxlon": -117.8747685
+  },
+  "tags": {
+    "addr:city": "Santa Ana",
+    "addr:housenumber": "1510",
+    "addr:postcode": "92706",
+    "addr:state": "CA",
+    "addr:street": "North Parton Street",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "lutheran",
+    "ele": "38",
+    "gnis:feature_id": "2085091",
+    "height": "10.36",
+    "name": "Saint Peter Lutheran Church",
+    "religion": "christian",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}
